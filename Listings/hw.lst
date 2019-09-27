@@ -1,0 +1,103 @@
+C51 COMPILER V9.00   HW                                                                    09/27/2019 20:48:43 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE HW
+OBJECT MODULE PLACED IN .\Objects\hw.obj
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE hw.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\hw.lst) OBJECT(.\Objects\hw
+                    -.obj)
+
+line level    source
+
+   1          #include "stc8.h"
+   2          #include "hw.h"
+   3          #include "rtx.h"
+   4          #include "cmd.h"
+   5          
+   6          unsigned long sysclk = 12000000; 
+   7          extern unsigned long rtx_baud;
+   8          unsigned char temp;
+   9          
+  10          void HW_IOInit()
+  11          {
+  12   1              //set P0.3 as input
+  13   1              P0M0 &= 0xf7;
+  14   1              P0M1 &= 0xf7;
+  15   1              //set P0.4\P0.5\P0.6 as output
+  16   1              P0M0 |= 0x70;
+  17   1              P0M1 &= 0x8f;
+  18   1      
+  19   1              //set P1.3 as output
+  20   1              //P1M0 |= 0x08;
+  21   1              //P1M1 &= 0xf7;
+  22   1      
+  23   1               
+  24   1              //set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
+  25   1              //P_SW2 |= 0x40;
+  26   1              //P5M0 &= 0xfb;//set P5.2 as inout port
+  27   1              //P5M1 &= 0xfb;
+  28   1              //P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
+  29   1              //P5M1 &= 0xf7;
+  30   1      
+  31   1              //set P5.4 as output for sysclk
+  32   1              //P5M0 |= 0x10;
+  33   1              //P5M1 &= 0xef;
+  34   1      }
+  35          
+  36          //Select P1.7 XTAL as MCLK
+  37          void HW_SysclkInit()
+  38          {
+  39   1              //sysclk = 12000000
+  40   1              CLKDIV = 0x02;
+  41   1      
+  42   1              //use internal IRC,output sysclk to P5.4
+  43   1              CKSEL =  0x10;
+  44   1      }
+  45          
+  46          void HW_T2Init()
+  47          {
+  48   1              unsigned int div = 65536 - sysclk / (4 * rtx_baud);
+  49   1              
+  50   1              //set counter
+  51   1              T2L = div & 0xff;
+  52   1              T2H = (div & 0xff00) >> 8;
+  53   1              
+  54   1              //enable P1.3 output for T2 overflow
+C51 COMPILER V9.00   HW                                                                    09/27/2019 20:48:43 PAGE 2   
+
+  55   1              INTCLKO |= 0x40;
+  56   1              
+  57   1              //counter with sysclk,,
+  58   1              AUXR |= 0x04;
+  59   1              
+  60   1              //work as timer
+  61   1              AUXR &= ~0x08;
+  62   1              
+  63   1              //start timer
+  64   1              AUXR |= 0x10;
+  65   1      }
+  66          
+  67          void HW_IntcInit()
+  68          {
+  69   1              //enable uart4 int.
+  70   1              IE2 |= 0x10;
+  71   1      }
+  72          
+  73          void HW_Uart4ISR(void) interrupt 18
+  74          {
+  75   1              RTX_Recv(&temp);
+  76   1              Cmd_set(temp);
+  77   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    162    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
