@@ -6,7 +6,7 @@ unsigned long rtx_baud = 9600;
 void RTX_Init()
 {
 	//mode 0
-	S4CON |= 0x80;
+	S4CON &= ~0x80;
 	
 	//select T2 as baud gen.
 	S4CON &= ~0x40;
@@ -26,4 +26,11 @@ void RTX_Send(unsigned char buf)
 	S4BUF = buf;
 	while((S4CON & 0x02) != 0x02);
 	S4CON &= ~0x02;
+}
+
+void RTX_SendBytes(unsigned char* buf,unsigned char len)
+{
+	unsigned char idx;
+	for(idx=0;idx<len;idx++)
+		RTX_Send(buf[idx]);
 }

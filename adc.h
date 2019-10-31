@@ -19,4 +19,4 @@ typedef enum tagADC_CH
 }ADC_CH;
 
 void ADC_Init();
-unsigned short ADC_Get(ADC_CH ch);
+unsigned int ADC_Get(ADC_CH ch);

@@ -1,8 +1,8 @@
 #include "stc8.h"
 #include "pll.h"
 
-unsigned int nint_ratio = 430;
-unsigned int r_ratio = 10;
+unsigned int nint_ratio = 86/*430*/;
+unsigned int r_ratio = 2/*10*/;	   
 unsigned int nfrac_ratio = 0;
 unsigned long reg_var[6] = {0x1f86ff,0xf6400a,0xfc0001,0x1ae,0x0};
 

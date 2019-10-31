@@ -127,7 +127,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>STCMON51</Key>
-          <Name>-S4 -B115200 -O0 -U0</Name>
+          <Name>-S3 -B115200 -O0 -U0</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -182,7 +182,7 @@
 
   <Group>
     <GroupName>Sources</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
@@ -191,10 +191,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>20</ColumnNumber>
+      <ColumnNumber>40</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>50</TopLine>
-      <CurrentLine>68</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>4</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\pll.c</PathWithFileName>
       <FilenameWithoutPath>pll.c</FilenameWithoutPath>
@@ -205,10 +205,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>43</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>7</TopLine>
-      <CurrentLine>35</CurrentLine>
+      <TopLine>100</TopLine>
+      <CurrentLine>117</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -221,8 +221,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>27</CurrentLine>
+      <TopLine>6</TopLine>
+      <CurrentLine>31</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\rtx.c</PathWithFileName>
       <FilenameWithoutPath>rtx.c</FilenameWithoutPath>
@@ -233,10 +233,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>25</ColumnNumber>
+      <ColumnNumber>17</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>13</TopLine>
-      <CurrentLine>33</CurrentLine>
+      <TopLine>7</TopLine>
+      <CurrentLine>17</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\hw.c</PathWithFileName>
       <FilenameWithoutPath>hw.c</FilenameWithoutPath>
@@ -249,7 +249,7 @@
       <Focus>0</Focus>
       <ColumnNumber>7</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
+      <TopLine>3</TopLine>
       <CurrentLine>26</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\cmd.c</PathWithFileName>
@@ -261,10 +261,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>21</ColumnNumber>
+      <ColumnNumber>19</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>13</CurrentLine>
+      <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\adc.c</PathWithFileName>
       <FilenameWithoutPath>adc.c</FilenameWithoutPath>
@@ -275,10 +275,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>22</ColumnNumber>
+      <ColumnNumber>13</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>11</CurrentLine>
+      <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\utily.c</PathWithFileName>
       <FilenameWithoutPath>utily.c</FilenameWithoutPath>
@@ -287,7 +287,7 @@
 
   <Group>
     <GroupName>Headers</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
@@ -298,8 +298,8 @@
       <Focus>0</Focus>
       <ColumnNumber>11</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>220</TopLine>
-      <CurrentLine>226</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\stc8.h</PathWithFileName>
       <FilenameWithoutPath>stc8.h</FilenameWithoutPath>
@@ -324,10 +324,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>19</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>4</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\hw.h</PathWithFileName>
       <FilenameWithoutPath>hw.h</FilenameWithoutPath>
@@ -338,10 +338,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>12</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>3</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\adc.h</PathWithFileName>
       <FilenameWithoutPath>adc.h</FilenameWithoutPath>
@@ -352,7 +352,7 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>34</ColumnNumber>
+      <ColumnNumber>13</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>1</CurrentLine>
@@ -366,10 +366,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>57</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>4</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\rtx.h</PathWithFileName>
       <FilenameWithoutPath>rtx.h</FilenameWithoutPath>
@@ -435,9 +435,9 @@
         <DockType>2</DockType>
         <DockLocation>3</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>29</DockedRect_top>
+        <DockedRect_top>24</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>58</DockedRect_bottom>
+        <DockedRect_bottom>50</DockedRect_bottom>
         <DockedRect_right>893</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -460,9 +460,9 @@
         <DockType>2</DockType>
         <DockLocation>3</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>58</DockedRect_top>
+        <DockedRect_top>50</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>87</DockedRect_bottom>
+        <DockedRect_bottom>76</DockedRect_bottom>
         <DockedRect_right>384</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -485,9 +485,9 @@
         <DockType>2</DockType>
         <DockLocation>3</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>58</DockedRect_top>
+        <DockedRect_top>50</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>87</DockedRect_bottom>
+        <DockedRect_bottom>76</DockedRect_bottom>
         <DockedRect_right>626</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -510,9 +510,9 @@
         <DockType>2</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -528,16 +528,16 @@
         <ItemNo>6</ItemNo>
         <Name>Performance Analyzer</Name>
         <AnchorWinID>1913</AnchorWinID>
-        <AnchorWinName>Instruction Trace</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -553,16 +553,16 @@
         <ItemNo>7</ItemNo>
         <Name>Performance Analyzer</Name>
         <AnchorWinID>343</AnchorWinID>
-        <AnchorWinName>Performance Analyzer</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -578,16 +578,16 @@
         <ItemNo>8</ItemNo>
         <Name>Code Coverage</Name>
         <AnchorWinID>204</AnchorWinID>
-        <AnchorWinName>Performance Analyzer</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -603,16 +603,16 @@
         <ItemNo>9</ItemNo>
         <Name>Disassembly</Name>
         <AnchorWinID>346</AnchorWinID>
-        <AnchorWinName>Code Coverage</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -628,16 +628,16 @@
         <ItemNo>10</ItemNo>
         <Name>Books</Name>
         <AnchorWinID>203</AnchorWinID>
-        <AnchorWinName>Disassembly</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -653,16 +653,16 @@
         <ItemNo>11</ItemNo>
         <Name>Functions</Name>
         <AnchorWinID>109</AnchorWinID>
-        <AnchorWinName>Books</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -678,16 +678,16 @@
         <ItemNo>12</ItemNo>
         <Name>Templates</Name>
         <AnchorWinID>195</AnchorWinID>
-        <AnchorWinName>Functions</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -703,16 +703,16 @@
         <ItemNo>13</ItemNo>
         <Name>Registers</Name>
         <AnchorWinID>196</AnchorWinID>
-        <AnchorWinName>Templates</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>1490</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>560</FloatingRect_top>
         <FloatingRect_left>1320</FloatingRect_left>
@@ -735,9 +735,9 @@
         <DockType>2</DockType>
         <DockLocation>1</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>87</DockedRect_top>
+        <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>242</DockedRect_right>
         <FloatingRect_top>440</FloatingRect_top>
         <FloatingRect_left>13</FloatingRect_left>
@@ -760,9 +760,9 @@
         <DockType>2</DockType>
         <DockLocation>4</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -778,16 +778,16 @@
         <ItemNo>16</ItemNo>
         <Name>Command</Name>
         <AnchorWinID>197</AnchorWinID>
-        <AnchorWinName>Build Output</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -803,16 +803,16 @@
         <ItemNo>17</ItemNo>
         <Name>Find in Files</Name>
         <AnchorWinID>198</AnchorWinID>
-        <AnchorWinName>Command</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -828,16 +828,16 @@
         <ItemNo>18</ItemNo>
         <Name>Browse</Name>
         <AnchorWinID>199</AnchorWinID>
-        <AnchorWinName>Find in Files</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -853,16 +853,16 @@
         <ItemNo>19</ItemNo>
         <Name>UART #1</Name>
         <AnchorWinID>38007</AnchorWinID>
-        <AnchorWinName>Browser</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -878,16 +878,16 @@
         <ItemNo>20</ItemNo>
         <Name>UART #2</Name>
         <AnchorWinID>1939</AnchorWinID>
-        <AnchorWinName>UART #1</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -903,16 +903,16 @@
         <ItemNo>21</ItemNo>
         <Name>UART #3</Name>
         <AnchorWinID>1940</AnchorWinID>
-        <AnchorWinName>UART #2</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -928,16 +928,16 @@
         <ItemNo>22</ItemNo>
         <Name>UART #4</Name>
         <AnchorWinID>1941</AnchorWinID>
-        <AnchorWinName>UART #3</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -953,16 +953,16 @@
         <ItemNo>23</ItemNo>
         <Name>Call Stack</Name>
         <AnchorWinID>197</AnchorWinID>
-        <AnchorWinName>Build Output</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>2</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -978,16 +978,16 @@
         <ItemNo>24</ItemNo>
         <Name>Call Stack</Name>
         <AnchorWinID>1944</AnchorWinID>
-        <AnchorWinName>Call Stack</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1003,16 +1003,16 @@
         <ItemNo>25</ItemNo>
         <Name>Locals</Name>
         <AnchorWinID>1507</AnchorWinID>
-        <AnchorWinName>Call Stack</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1028,16 +1028,16 @@
         <ItemNo>26</ItemNo>
         <Name>Watch 1</Name>
         <AnchorWinID>1935</AnchorWinID>
-        <AnchorWinName>Locals</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1053,16 +1053,16 @@
         <ItemNo>27</ItemNo>
         <Name>Watch 2</Name>
         <AnchorWinID>1936</AnchorWinID>
-        <AnchorWinName>Watch 1</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1078,16 +1078,16 @@
         <ItemNo>28</ItemNo>
         <Name>Memory 1</Name>
         <AnchorWinID>1937</AnchorWinID>
-        <AnchorWinName>Watch 2</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1103,16 +1103,16 @@
         <ItemNo>29</ItemNo>
         <Name>Memory 2</Name>
         <AnchorWinID>1465</AnchorWinID>
-        <AnchorWinName>Memory 1</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1128,16 +1128,16 @@
         <ItemNo>30</ItemNo>
         <Name>Memory 3</Name>
         <AnchorWinID>1466</AnchorWinID>
-        <AnchorWinName>Memory 2</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1153,16 +1153,16 @@
         <ItemNo>31</ItemNo>
         <Name>Memory 4</Name>
         <AnchorWinID>1467</AnchorWinID>
-        <AnchorWinName>Memory 3</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1178,16 +1178,16 @@
         <ItemNo>32</ItemNo>
         <Name>Symbols</Name>
         <AnchorWinID>1468</AnchorWinID>
-        <AnchorWinName>Memory 4</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>197</OtherWinID>
-        <OtherWinName>Build Output</OtherWinName>
+        <OtherWinName></OtherWinName>
         <WinType>1</WinType>
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>780</DockedRect_top>
+        <DockedRect_top>788</DockedRect_top>
         <DockedRect_left>246</DockedRect_left>
-        <DockedRect_bottom>990</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1486</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1228,7 +1228,7 @@
         <ItemNo>34</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35885</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1253,7 +1253,7 @@
         <ItemNo>35</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35886</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1278,7 +1278,7 @@
         <ItemNo>36</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35887</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1303,7 +1303,7 @@
         <ItemNo>37</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35888</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1328,7 +1328,7 @@
         <ItemNo>38</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35889</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1353,7 +1353,7 @@
         <ItemNo>39</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35890</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1378,7 +1378,7 @@
         <ItemNo>40</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35891</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1403,7 +1403,7 @@
         <ItemNo>41</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35892</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1428,7 +1428,7 @@
         <ItemNo>42</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35893</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1453,7 +1453,7 @@
         <ItemNo>43</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35894</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1478,7 +1478,7 @@
         <ItemNo>44</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35895</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1503,7 +1503,7 @@
         <ItemNo>45</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35896</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1528,7 +1528,7 @@
         <ItemNo>46</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35897</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1553,7 +1553,7 @@
         <ItemNo>47</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35898</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1578,7 +1578,7 @@
         <ItemNo>48</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35899</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1603,7 +1603,7 @@
         <ItemNo>49</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35900</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1628,7 +1628,7 @@
         <ItemNo>50</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35901</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1653,7 +1653,7 @@
         <ItemNo>51</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35902</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1678,7 +1678,7 @@
         <ItemNo>52</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35903</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1703,7 +1703,7 @@
         <ItemNo>53</ItemNo>
         <Name>not set</Name>
         <AnchorWinID>35904</AnchorWinID>
-        <AnchorWinName>???</AnchorWinName>
+        <AnchorWinName></AnchorWinName>
         <OtherWinID>0</OtherWinID>
         <OtherWinName></OtherWinName>
         <WinType>1</WinType>
@@ -1731,54 +1731,48 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>0</ActiveTab>
+      <ActiveTab>12</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\main.c</Name>
-          <ColumnNumber>43</ColumnNumber>
-          <TopLine>7</TopLine>
-          <CurrentLine>35</CurrentLine>
+          <ColumnNumber>30</ColumnNumber>
+          <TopLine>100</TopLine>
+          <CurrentLine>117</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\pll.c</Name>
-          <ColumnNumber>20</ColumnNumber>
-          <TopLine>50</TopLine>
-          <CurrentLine>68</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\hw.c</Name>
-          <ColumnNumber>25</ColumnNumber>
-          <TopLine>13</TopLine>
-          <CurrentLine>33</CurrentLine>
+          <ColumnNumber>40</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>4</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\utily.c</Name>
-          <ColumnNumber>22</ColumnNumber>
+          <ColumnNumber>13</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>11</CurrentLine>
+          <CurrentLine>9</CurrentLine>
         </Doc>
         <Doc>
           <Name>UTILY.H</Name>
-          <ColumnNumber>34</ColumnNumber>
+          <ColumnNumber>13</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\rtx.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>27</CurrentLine>
+          <TopLine>6</TopLine>
+          <CurrentLine>31</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\adc.c</Name>
-          <ColumnNumber>21</ColumnNumber>
+          <ColumnNumber>19</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>13</CurrentLine>
+          <CurrentLine>9</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\cmd.c</Name>
           <ColumnNumber>7</ColumnNumber>
-          <TopLine>1</TopLine>
+          <TopLine>3</TopLine>
           <CurrentLine>26</CurrentLine>
         </Doc>
         <Doc>
@@ -1794,28 +1788,28 @@
           <CurrentLine>2</CurrentLine>
         </Doc>
         <Doc>
-          <Name>STC8.H</Name>
-          <ColumnNumber>11</ColumnNumber>
-          <TopLine>220</TopLine>
-          <CurrentLine>226</CurrentLine>
-        </Doc>
-        <Doc>
           <Name>HW.H</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>19</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <CurrentLine>4</CurrentLine>
         </Doc>
         <Doc>
           <Name>ADC.H</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>12</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <CurrentLine>3</CurrentLine>
         </Doc>
         <Doc>
           <Name>RTX.H</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>57</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <CurrentLine>4</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\hw.c</Name>
+          <ColumnNumber>17</ColumnNumber>
+          <TopLine>7</TopLine>
+          <CurrentLine>17</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

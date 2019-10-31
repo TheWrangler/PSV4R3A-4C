@@ -13,9 +13,9 @@ void ADC_Init()
 	ADCCFG &= ~0x0f;
 }
 
-unsigned short ADC_Get(ADC_CH ch)
+unsigned int ADC_Get(ADC_CH ch)
 {
-	unsigned short var;
+	unsigned int var;
 	
 	//select ch
 	ADC_CONTR &= 0xf0;

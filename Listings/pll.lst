@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   PLL                                                                   09/27/2019 20:48:43 PAGE 1   
+C51 COMPILER V9.00   PLL                                                                   10/31/2019 17:55:16 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE PLL
@@ -11,8 +11,8 @@ line level    source
    1          #include "stc8.h"
    2          #include "pll.h"
    3          
-   4          unsigned int nint_ratio = 430;
-   5          unsigned int r_ratio = 10;
+   4          unsigned int nint_ratio = 86/*430*/;
+   5          unsigned int r_ratio = 2/*10*/;    
    6          unsigned int nfrac_ratio = 0;
    7          unsigned long reg_var[6] = {0x1f86ff,0xf6400a,0xfc0001,0x1ae,0x0};
    8          
@@ -62,7 +62,7 @@ line level    source
   52   2                      clk = 1;
   53   2              }       
   54   1              
-C51 COMPILER V9.00   PLL                                                                   09/27/2019 20:48:43 PAGE 2   
+C51 COMPILER V9.00   PLL                                                                   10/31/2019 17:55:16 PAGE 2   
 
   55   1              clk = 0;
   56   1              dout = 0;
