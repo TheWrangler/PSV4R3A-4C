@@ -7,11 +7,92 @@ F:\PSV4R3A-4C\PSV4R3A-4C.uvproj
 Project File Date:  09/27/2019
 
 <h2>Output:</h2>
+Driver version   : V1.08
+Firmware version : V3.1
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
-MAIN.C(35): warning C206: 'sprintf': missing function-prototype
-MAIN.C(35): error C267: 'sprintf': requires ANSI-style prototype
+MAIN.C(130): warning C209: '__sprintf_splashscreen': too few actual parameters
+compiling rtx.c...
+compiling hw.c...
+compiling cmd.c...
+compiling adc.c...
+compiling utily.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=114.0 xdata=0 code=1999
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 5 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling pll.c...
+compiling main.c...
+compiling rtx.c...
+compiling hw.c...
+compiling cmd.c...
+compiling adc.c...
+compiling utily.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=114.0 xdata=0 code=1999
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling hw.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=114.0 xdata=0 code=2002
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=114.0 xdata=0 code=2002
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling pll.c...
+compiling main.c...
+MAIN.C(120): error C141: syntax error near 'unsigned'
+MAIN.C(120): error C202: 'n2': undefined identifier
+MAIN.C(121): error C202: 'n2': undefined identifier
+MAIN.C(123): error C202: 'n2': undefined identifier
+MAIN.C(124): error C202: 'n2': undefined identifier
 compiling rtx.c...
 compiling hw.c...
 compiling cmd.c...
@@ -21,8 +102,11 @@ Target not created
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
-MAIN.C(40): warning C206: 'RTX_SendBytes': missing function-prototype
-MAIN.C(40): error C267: 'RTX_SendBytes': requires ANSI-style prototype
+MAIN.C(120): error C141: syntax error near 'unsigned'
+MAIN.C(120): error C202: 'n2': undefined identifier
+MAIN.C(121): error C202: 'n2': undefined identifier
+MAIN.C(123): error C202: 'n2': undefined identifier
+MAIN.C(124): error C202: 'n2': undefined identifier
 compiling rtx.c...
 compiling hw.c...
 compiling cmd.c...
@@ -32,8 +116,100 @@ Target not created
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
-MAIN.C(41): warning C206: 'RTX_SendBytes': missing function-prototype
-MAIN.C(41): error C267: 'RTX_SendBytes': requires ANSI-style prototype
+MAIN.C(188): warning C209: '__sprintf_float': too few actual parameters
+compiling rtx.c...
+compiling hw.c...
+compiling cmd.c...
+compiling adc.c...
+compiling utily.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=118.0 xdata=0 code=3206
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=118.0 xdata=0 code=3223
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=118.0 xdata=0 code=3223
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=118.0 xdata=0 code=3242
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+Program Size: data=118.0 xdata=0 code=3244
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling pll.c...
+compiling main.c...
+MAIN.C(120): error C202: 'var': undefined identifier
+MAIN.C(121): error C202: 'fv': undefined identifier
+MAIN.C(122): error C202: 'fv': undefined identifier
+MAIN.C(123): error C202: 'fv': undefined identifier
+MAIN.C(124): error C202: 'len': undefined identifier
+MAIN.C(125): error C202: 'len': undefined identifier
+MAIN.C(131): error C202: 'len': undefined identifier
+MAIN.C(132): error C202: 'len': undefined identifier
+MAIN.C(133): error C202: 'len': undefined identifier
 compiling rtx.c...
 compiling hw.c...
 compiling cmd.c...
@@ -43,172 +219,16 @@ Target not created
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
-CMD.H(1): error C132: '_Cmd_set': not in formal parameter list
-CMD.H(2): error C132: '_Cmd_get': not in formal parameter list
-CMD.H(3): error C132: 'Cmd_clear': not in formal parameter list
-CMD.H(4): error C132: 'Cmd_reply': not in formal parameter list
-CMD.H(5): error C132: 'Cmd_IsNew': not in formal parameter list
-UTILY.H(1): error C132: '_delay_ms': not in formal parameter list
-D:\KEIL\C51\INC\STDIO.H(22): error C127: 'size_t': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(27): error C127: '_getkey': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(28): error C127: 'getchar': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(29): error C127: '_ungetchar': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(30): error C127: '_putchar': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(31): error C127: '_printf': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(32): error C127: '_sprintf': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(33): error C127: '_vprintf': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(34): error C127: '_vsprintf': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(35): error C127: '_gets': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(36): error C127: '_scanf': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(37): error C127: '_sscanf': invalid storage class
-D:\KEIL\C51\INC\STDIO.H(38): error C127: '_puts': invalid storage class
-MAIN.C(13): error C132: 'msg': not in formal parameter list
-MAIN.C(16): error C132: 'main': not in formal parameter list
-MAIN.C(16): error C141: syntax error near '{'
-MAIN.C(17): error C132: 'cmd': not in formal parameter list
-MAIN.C(17): error C131: 'len': duplicate function-parameter
-MAIN.C(20): error C132: 'HW_SysclkInit': not in formal parameter list
-MAIN.C(23): error C132: 'HW_IOInit': not in formal parameter list
-MAIN.C(26): error C132: 'HW_T2Init': not in formal parameter list
-MAIN.C(27): error C132: 'HW_IntcInit': not in formal parameter list
-MAIN.C(28): error C132: 'RTX_Init': not in formal parameter list
-MAIN.C(29): error C132: 'ADC_Init': not in formal parameter list
-MAIN.C(31): error C141: syntax error near '1000'
-MAIN.C(31): error C132: 'delay_ms': not in formal parameter list
-MAIN.C(34): error C132: 'PLL_Reset': not in formal parameter list
-MAIN.C(35): error C132: 'PLL_Config': not in formal parameter list
-MAIN.C(36): error C141: syntax error near '500'
-MAIN.C(36): error C132: 'delay_ms': not in formal parameter list
-MAIN.C(38): error C244: 'len': can't initialize, bad type or class
-MAIN.C(38): error C202: 'msg': undefined identifier
-MAIN.C(38): error C131: 'len': duplicate function-parameter
-MAIN.C(39): error C141: syntax error near 'while'
-MAIN.C(39): error C141: syntax error near '!=', expected ')'
-MAIN.C(43): error C231: 'PLL_Reset': redefinition
-MAIN.C(44): error C231: 'PLL_Config': redefinition
-MAIN.C(45): error C141: syntax error near '500'
-MAIN.C(46): error C141: syntax error near '}'
-MAIN.C(48): error C141: syntax error near '1'
-MAIN.C(52): error C202: 'cmd': undefined identifier
-MAIN.C(53): error C202: 'cmd': undefined identifier
-MAIN.C(67): error C141: syntax error near '}'
+MAIN.C(121): error C202: 'var': undefined identifier
+MAIN.C(122): error C202: 'var': undefined identifier
+MAIN.C(125): error C202: 'len': undefined identifier
+MAIN.C(126): error C202: 'len': undefined identifier
+MAIN.C(132): error C202: 'len': undefined identifier
+MAIN.C(133): error C202: 'len': undefined identifier
+MAIN.C(134): error C202: 'len': undefined identifier
 compiling rtx.c...
-RTX.C(4): error C244: 'rtx_baud': can't initialize, bad type or class
-RTX.C(4): error C132: 'rtx_baud': not in formal parameter list
-RTX.C(7): error C132: 'RTX_Init': not in formal parameter list
-RTX.C(7): error C141: syntax error near '{'
-RTX.C(9): error C136: 'S4CON': 'void' on variable
-RTX.C(9): error C132: 'S4CON': not in formal parameter list
-RTX.C(12): error C136: 'S4CON': 'void' on variable
-RTX.C(12): error C132: 'S4CON': not in formal parameter list
-RTX.C(15): error C136: 'S4CON': 'void' on variable
-RTX.C(15): error C132: 'S4CON': not in formal parameter list
-RTX.C(19): error C132: '_RTX_Recv': not in formal parameter list
-RTX.C(19): error C141: syntax error near '{'
-RTX.C(20): error C244: 'buf': can't initialize, bad type or class
-RTX.C(20): error C131: 'buf': duplicate function-parameter
-RTX.C(21): error C132: 'S4CON': not in formal parameter list
-RTX.C(21): error C141: syntax error near '&='
-RTX.C(25): error C132: '_RTX_Send': not in formal parameter list
-RTX.C(25): error C141: syntax error near '{'
-RTX.C(26): error C244: 'S4BUF': can't initialize, bad type or class
-RTX.C(26): error C202: 'buf': undefined identifier
-RTX.C(26): error C132: 'S4BUF': not in formal parameter list
-RTX.C(27): error C141: syntax error near 'while'
-RTX.C(27): error C141: syntax error near '&', expected ')'
-RTX.C(28): error C129: missing ';' before '&='
 compiling hw.c...
-CMD.H(1): error C132: '_Cmd_set': not in formal parameter list
-CMD.H(2): error C132: '_Cmd_get': not in formal parameter list
-CMD.H(3): error C132: 'Cmd_clear': not in formal parameter list
-CMD.H(4): error C132: 'Cmd_reply': not in formal parameter list
-CMD.H(5): error C132: 'Cmd_IsNew': not in formal parameter list
-HW.C(6): error C244: 'sysclk': can't initialize, bad type or class
-HW.C(6): error C132: 'sysclk': not in formal parameter list
-HW.C(7): error C127: 'rtx_baud': invalid storage class
-HW.C(8): error C132: 'temp': not in formal parameter list
-HW.C(11): error C132: 'HW_IOInit': not in formal parameter list
-HW.C(11): error C141: syntax error near '{'
-HW.C(13): error C136: 'P0M0': 'void' on variable
-HW.C(13): error C132: 'P0M0': not in formal parameter list
-HW.C(14): error C136: 'P0M1': 'void' on variable
-HW.C(14): error C132: 'P0M1': not in formal parameter list
-HW.C(16): error C136: 'P0M0': 'void' on variable
-HW.C(16): error C132: 'P0M0': not in formal parameter list
-HW.C(17): error C136: 'P0M1': 'void' on variable
-HW.C(17): error C132: 'P0M1': not in formal parameter list
-HW.C(20): error C136: 'P1M0': 'void' on variable
-HW.C(20): error C132: 'P1M0': not in formal parameter list
-HW.C(21): error C136: 'P1M1': 'void' on variable
-HW.C(21): error C132: 'P1M1': not in formal parameter list
-HW.C(24): error C136: 'P_SW2': 'void' on variable
-HW.C(24): error C132: 'P_SW2': not in formal parameter list
-HW.C(30): error C136: 'P5M0': 'void' on variable
-HW.C(30): error C132: 'P5M0': not in formal parameter list
-HW.C(31): error C136: 'P5M1': 'void' on variable
-HW.C(31): error C132: 'P5M1': not in formal parameter list
-HW.C(32): error C136: 'P5M0': 'void' on variable
-HW.C(32): error C132: 'P5M0': not in formal parameter list
-HW.C(33): error C136: 'P5M1': 'void' on variable
-HW.C(33): error C132: 'P5M1': not in formal parameter list
-HW.C(36): error C136: 'P5M0': 'void' on variable
-HW.C(36): error C132: 'P5M0': not in formal parameter list
-HW.C(37): error C136: 'P5M1': 'void' on variable
-HW.C(37): error C132: 'P5M1': not in formal parameter list
-HW.C(42): error C132: 'HW_SysclkInit': not in formal parameter list
-HW.C(42): error C141: syntax error near '{'
-HW.C(44): error C141: syntax error near 'unsigned'
-HW.C(47): error C141: syntax error near 'unsigned'
-HW.C(51): error C132: 'HW_T2Init': not in formal parameter list
-HW.C(51): error C141: syntax error near '{'
-HW.C(52): error C136: 'div': 'void' on variable
-HW.C(52): error C244: 'div': can't initialize, bad type or class
-HW.C(52): error C202: 'sysclk': undefined identifier
-HW.C(52): error C136: 'div': 'void' on variable
-HW.C(52): error C132: 'div': not in formal parameter list
-HW.C(55): error C244: 'T2L': can't initialize, bad type or class
-HW.C(55): error C202: 'div': undefined identifier
-HW.C(55): error C132: 'T2L': not in formal parameter list
-HW.C(56): error C244: 'T2H': can't initialize, bad type or class
-HW.C(56): error C202: 'div': undefined identifier
-HW.C(56): error C132: 'T2H': not in formal parameter list
-HW.C(59): error C132: 'INTCLKO': not in formal parameter list
-HW.C(59): error C141: syntax error near '|='
-HW.C(62): error C132: 'AUXR': not in formal parameter list
-HW.C(65): error C132: 'AUXR': not in formal parameter list
-HW.C(68): error C132: 'AUXR': not in formal parameter list
-HW.C(72): error C132: 'HW_IntcInit': not in formal parameter list
-HW.C(72): error C141: syntax error near '{'
-HW.C(74): error C132: 'IE2': not in formal parameter list
-HW.C(77): error C132: 'HW_Uart4ISR': not in formal parameter list
-HW.C(77): error C141: syntax error near 'interrupt'
-HW.C(79): error C132: 'RTX_Recv': not in formal parameter list
-HW.C(80): error C132: '_Cmd_set': not in formal parameter list
-HW.C(81): error C141: syntax error near '}'
 compiling cmd.c...
-CMD.C(3): error C132: 'cmd': not in formal parameter list
-CMD.C(4): error C244: 'bValid': can't initialize, bad type or class
-CMD.C(4): error C132: 'bValid': not in formal parameter list
-CMD.C(5): error C132: 'rply': not in formal parameter list
-CMD.C(6): error C244: 'rply_len': can't initialize, bad type or class
-CMD.C(6): error C132: 'rply_len': not in formal parameter list
-CMD.C(9): error C132: '_Cmd_set': not in formal parameter list
-CMD.C(9): error C141: syntax error near '{'
-CMD.C(10): error C136: 'cmd': 'void' on variable
-CMD.C(10): error C244: 'cmd': can't initialize, bad type or class
-CMD.C(10): error C202: 'content': undefined identifier
-CMD.C(10): error C136: 'cmd': 'void' on variable
-CMD.C(10): error C132: 'cmd': not in formal parameter list
-CMD.C(11): error C244: 'bValid': can't initialize, bad type or class
-CMD.C(11): error C132: 'bValid': not in formal parameter list
-CMD.C(12): error C141: syntax error near '}'
-CMD.C(16): error C202: 'bValid': undefined identifier
-CMD.C(21): error C202: 'bValid': undefined identifier
-CMD.C(24): error C202: 'cmd': undefined identifier
-CMD.C(25): error C202: 'bValid': undefined identifier
-CMD.C(31): error C202: 'bValid': undefined identifier
-CMD.C(37): error C202: 'rply_len': undefined identifier
-CMD.C(38): error C202: 'rply': undefined identifier
 compiling adc.c...
 compiling utily.c...
 Target not created
@@ -222,83 +242,12 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CMD_CLEAR?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?HW
-    LENGTH:  0005H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?RTX
-    LENGTH:  0004H
-*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  RTX_BAUD
-    SEGMENT: ?DT?RTX
-*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  TEMP
-    SEGMENT: ?DT?HW
-*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  SYSCLK
-    SEGMENT: ?DT?HW
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  RTX_BAUD
-    MODULE:  .\Objects\hw.obj (HW)
-    ADDRESS: 0799H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  RTX_BAUD
-    MODULE:  .\Objects\hw.obj (HW)
-    ADDRESS: 079BH
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  RTX_BAUD
-    MODULE:  .\Objects\hw.obj (HW)
-    ADDRESS: 079DH
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  RTX_BAUD
-    MODULE:  .\Objects\hw.obj (HW)
-    ADDRESS: 079FH
-Program Size: data=136.1 xdata=0 code=2418
-Target not created
-Build target 'Target 1'
-compiling pll.c...
-compiling main.c...
-compiling rtx.c...
-compiling hw.c...
-compiling cmd.c...
-compiling adc.c...
-compiling utily.c...
-linking...
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?CMD_REPLY?CMD
-    LENGTH:  0002H
-Program Size: data=130.0 xdata=0 code=1606
-Target not created
-Build target 'Target 1'
-compiling pll.c...
-compiling main.c...
-compiling rtx.c...
-compiling hw.c...
-compiling cmd.c...
-compiling adc.c...
-compiling utily.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CMD_CLEAR?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-Program Size: data=105.0 xdata=0 code=1606
+Program Size: data=107.0 xdata=0 code=3282
 creating hex file from ".\Objects\PSV4R3A-4C"...
 ".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).
 Build target 'Target 1'
@@ -311,38 +260,37 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?__SPRINTF_CHAR?MAIN
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-Program Size: data=105.0 xdata=0 code=1649
+Program Size: data=107.0 xdata=0 code=3282
 creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 5 Warning(s).
+".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
 compiling rtx.c...
 compiling hw.c...
+HW.C(81): warning C206: 'RTX_IsRecv': missing function-prototype
 compiling cmd.c...
 compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-Program Size: data=110.0 xdata=0 code=1711
+Program Size: data=107.0 xdata=0 code=3300
 creating hex file from ".\Objects\PSV4R3A-4C"...
 ".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
@@ -353,16 +301,48 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-Program Size: data=110.0 xdata=0 code=1711
+Program Size: data=107.0 xdata=0 code=3299
 creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Driver version   : V1.08
+Firmware version : V3.1
+Driver version   : V1.08
+Firmware version : V3.1
+Build target 'Target 1'
+compiling pll.c...
+compiling main.c...
+compiling rtx.c...
+compiling hw.c...
+HW.C(81): warning C206: 'RTX_IsRecv': missing function-prototype
+compiling cmd.c...
+compiling adc.c...
+compiling utily.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RTX_ISRECVINT?RTX
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_CLEAR?CMD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CMD_REPLY?CMD
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  RTX_ISRECV
+    MODULE:  .\Objects\hw.obj (HW)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  RTX_ISRECV
+    MODULE:  .\Objects\hw.obj (HW)
+    ADDRESS: 0A92H
+Program Size: data=107.0 xdata=0 code=3304
+creating hex file from ".\Objects\PSV4R3A-4C"...
+".\Objects\PSV4R3A-4C" - 0 Error(s), 7 Warning(s).
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
@@ -373,16 +353,16 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-Program Size: data=110.0 xdata=0 code=1700
+Program Size: data=107.0 xdata=0 code=3302
 creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
@@ -393,16 +373,18 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?__SPRINTF_WORD?MAIN
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC_GET?ADC
-Program Size: data=110.0 xdata=0 code=1700
+Program Size: data=107.0 xdata=0 code=3299
 creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 4 Warning(s).
+".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
+Driver version   : V1.08
+Firmware version : V3.1
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
@@ -413,12 +395,16 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-Program Size: data=107.0 xdata=0 code=1745
+Program Size: data=107.0 xdata=0 code=3311
 creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 2 Warning(s).
+".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).
+Driver version   : V1.08
+Firmware version : V3.1
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
@@ -429,12 +415,14 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-Program Size: data=107.0 xdata=0 code=1745
+Program Size: data=108.0 xdata=0 code=3337
 creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 2 Warning(s).
+".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).
 Build target 'Target 1'
 compiling pll.c...
 compiling main.c...
@@ -445,25 +433,11 @@ compiling adc.c...
 compiling utily.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CMD_CLEAR?CMD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CMD_REPLY?CMD
-Program Size: data=107.0 xdata=0 code=1745
-creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 2 Warning(s).
-Build target 'Target 1'
-compiling pll.c...
-compiling main.c...
-compiling rtx.c...
-compiling hw.c...
-compiling cmd.c...
-compiling adc.c...
-compiling utily.c...
-linking...
+    SEGMENT: ?PR?HW_SYSCLKINIT?HW
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_CLEAR?CMD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CMD_REPLY?CMD
-Program Size: data=107.0 xdata=0 code=1745
+Program Size: data=108.0 xdata=0 code=3337
 creating hex file from ".\Objects\PSV4R3A-4C"...
-".\Objects\PSV4R3A-4C" - 0 Error(s), 2 Warning(s).
+".\Objects\PSV4R3A-4C" - 0 Error(s), 3 Warning(s).

@@ -26,19 +26,14 @@ void HW_IOInit()
 
 	//set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
 	P_SW2 |= 0x04;
-	//P_SW2 &= ~0x04;
-	//P0M0 &= ~0x04;
-	//P0M1 &= ~0x04;
-   	//P0M0 |= 0x08;
-	//P0M1 &= ~0x08;
 	P5M0 &= ~0x04;//set P5.2 as inout port
 	P5M1 &= ~0x04;
 	P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
 	P5M1 &= ~0x08;
 
 	//set P5.4 as output for sysclk
-	P5M0 |= 0x10;
-	P5M1 &= ~0x10;
+	//P5M0 |= 0x10;
+	//P5M1 &= ~0x10;
 }
 
 //Select P1.7 XTAL as MCLK
@@ -76,10 +71,16 @@ void HW_IntcInit()
 {
 	//enable uart4 int.
 	IE2 |= 0x10;
+
+	//enable global int.
+	IE |= 0x80;
 }
 
 void HW_Uart4ISR(void) interrupt 18
 {
-	RTX_Recv(&temp);
-	Cmd_set(temp);
+	if(RTX_IsRecvInt()==1)
+	{
+	   	RTX_Recv(&temp);
+		Cmd_set(temp);
+	}
 }

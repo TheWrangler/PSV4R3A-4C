@@ -15,6 +15,13 @@ void RTX_Init()
 	S4CON |= 0x10;
 }
 
+unsigned char RTX_IsRecvInt()
+{
+	if((S4CON & 0x01) == 0x01)
+		return 1;
+	else return 0;
+}
+
 void RTX_Recv(unsigned char *buf)
 {
 	*buf = S4BUF;

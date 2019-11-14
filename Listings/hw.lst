@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   HW                                                                    10/31/2019 17:55:17 PAGE 1   
+C51 COMPILER V9.00   HW                                                                    11/13/2019 22:18:23 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE HW
@@ -36,69 +36,70 @@ line level    source
   26   1      
   27   1              //set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
   28   1              P_SW2 |= 0x04;
-  29   1              //P_SW2 &= ~0x04;
-  30   1              //P0M0 &= ~0x04;
-  31   1              //P0M1 &= ~0x04;
-  32   1              //P0M0 |= 0x08;
-  33   1              //P0M1 &= ~0x08;
-  34   1              P5M0 &= ~0x04;//set P5.2 as inout port
-  35   1              P5M1 &= ~0x04;
-  36   1              P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
-  37   1              P5M1 &= ~0x08;
-  38   1      
-  39   1              //set P5.4 as output for sysclk
-  40   1              P5M0 |= 0x10;
-  41   1              P5M1 &= ~0x10;
-  42   1      }
-  43          
-  44          //Select P1.7 XTAL as MCLK
-  45          void HW_SysclkInit()
-  46          {
-  47   1              //sysclk = 24000000
-  48   1              CLKDIV = 0x01;
-  49   1      
-  50   1              //use internal IRC,output sysclk to P5.4
-  51   1              CKSEL =  0x18;
-  52   1      }
-  53          
-  54          void HW_T2Init()
-C51 COMPILER V9.00   HW                                                                    10/31/2019 17:55:17 PAGE 2   
+  29   1              P5M0 &= ~0x04;//set P5.2 as inout port
+  30   1              P5M1 &= ~0x04;
+  31   1              P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
+  32   1              P5M1 &= ~0x08;
+  33   1      
+  34   1              //set P5.4 as output for sysclk
+  35   1              //P5M0 |= 0x10;
+  36   1              //P5M1 &= ~0x10;
+  37   1      }
+  38          
+  39          //Select P1.7 XTAL as MCLK
+  40          void HW_SysclkInit()
+  41          {
+  42   1              //sysclk = 24000000
+  43   1              CLKDIV = 0x01;
+  44   1      
+  45   1              //use internal IRC,output sysclk to P5.4
+  46   1              CKSEL =  0x18;
+  47   1      }
+  48          
+  49          void HW_T2Init()
+  50          {
+  51   1              unsigned int div = 65536 - sysclk / (4 * rtx_baud);
+  52   1              
+  53   1              //set counter
+  54   1              T2L = div & 0xff;
+C51 COMPILER V9.00   HW                                                                    11/13/2019 22:18:23 PAGE 2   
 
-  55          {
-  56   1              unsigned int div = 65536 - sysclk / (4 * rtx_baud);
-  57   1              
-  58   1              //set counter
-  59   1              T2L = div & 0xff;
-  60   1              T2H = (div & 0xff00) >> 8;
-  61   1              
-  62   1              //enable P1.3 output for T2 overflow
-  63   1              INTCLKO |= 0x04;
-  64   1              
-  65   1              //counter with sysclk,,
-  66   1              AUXR |= 0x04;
-  67   1              
-  68   1              //work as timer
-  69   1              AUXR &= ~0x08;
-  70   1              
-  71   1              //start timer
-  72   1              AUXR |= 0x10;
-  73   1      }
-  74          
-  75          void HW_IntcInit()
-  76          {
-  77   1              //enable uart4 int.
-  78   1              IE2 |= 0x10;
-  79   1      }
-  80          
-  81          void HW_Uart4ISR(void) interrupt 18
-  82          {
-  83   1              RTX_Recv(&temp);
-  84   1              Cmd_set(temp);
-  85   1      }
+  55   1              T2H = (div & 0xff00) >> 8;
+  56   1              
+  57   1              //enable P1.3 output for T2 overflow
+  58   1              INTCLKO |= 0x04;
+  59   1              
+  60   1              //counter with sysclk,,
+  61   1              AUXR |= 0x04;
+  62   1              
+  63   1              //work as timer
+  64   1              AUXR &= ~0x08;
+  65   1              
+  66   1              //start timer
+  67   1              AUXR |= 0x10;
+  68   1      }
+  69          
+  70          void HW_IntcInit()
+  71          {
+  72   1              //enable uart4 int.
+  73   1              IE2 |= 0x10;
+  74   1      
+  75   1              //enable global int.
+  76   1              IE |= 0x80;
+  77   1      }
+  78          
+  79          void HW_Uart4ISR(void) interrupt 18
+  80          {
+  81   1              if(RTX_IsRecvInt()==1)
+  82   1              {
+  83   2                      RTX_Recv(&temp);
+  84   2                      Cmd_set(temp);
+  85   2              }
+  86   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    195    ----
+   CODE SIZE        =    198    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
