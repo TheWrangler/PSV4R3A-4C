@@ -1,10 +1,11 @@
 #include "stc8.h"
 #include "pll.h"
+#include "utily.h"
 
-unsigned int nint_ratio = 86/*430*/;
-unsigned int r_ratio = 2/*10*/;	   
+unsigned int nint_ratio = 172/*430*/;
+unsigned int r_ratio = 4/*10*/;	   
 unsigned long nfrac_ratio = 0;
-unsigned long reg_var[6] = {0x1f86ff,0xf6400a,0xfc0001,0x1ae,0x0};
+unsigned long reg_var[6] = {0x1f867f,0xf6800a,0xfc0001,0x1ae,0x0};
 
 sbit ldo = P0^3;
 sbit dout = P0^4;
@@ -63,6 +64,12 @@ void PLL_Config()
 	for(i=0;i<5;i++)
 	{
 		PLL_WriteReg(i, reg_var[i]);
+
+		le = 1;
+		delay_ms(1);
+		le = 0;
+		delay_ms(1);
+		le = 1;
 	}
 }
 

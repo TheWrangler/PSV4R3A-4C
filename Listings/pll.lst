@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   PLL                                                                   11/13/2019 22:18:22 PAGE 1   
+C51 COMPILER V9.00   PLL                                                                   11/23/2019 18:21:45 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE PLL
@@ -10,82 +10,89 @@ line level    source
 
    1          #include "stc8.h"
    2          #include "pll.h"
-   3          
-   4          unsigned int nint_ratio = 86/*430*/;
-   5          unsigned int r_ratio = 2/*10*/;    
-   6          unsigned long nfrac_ratio = 0;
-   7          unsigned long reg_var[6] = {0x1f86ff,0xf6400a,0xfc0001,0x1ae,0x0};
-   8          
-   9          sbit ldo = P0^3;
-  10          sbit dout = P0^4;
-  11          sbit clk = P0^5;
-  12          sbit le = P0^6;
-  13          
-  14          void PLL_Reset()
-  15          {
-  16   1              clk = 0;
-  17   1              dout = 0;
-  18   1              le = 1;
-  19   1      
-  20   1              //reference div ratio
-  21   1              reg_var[1] &= 0xffc000;
-  22   1              reg_var[1] |= r_ratio;
-  23   1      
-  24   1              //n.int div ratio
-  25   1              reg_var[3] &= 0xff0000;
-  26   1              reg_var[3] |= nint_ratio;
-  27   1      
-  28   1              //n.frac div ratio
-  29   1              reg_var[4] &= 0xf00000;
-  30   1              reg_var[4] |= nfrac_ratio;
-  31   1      }
-  32          
-  33          void PLL_WriteReg(unsigned char addr,unsigned long var)
-  34          {
-  35   1              unsigned char i;
-  36   1              unsigned long content = addr,temp;
-  37   1              content = content << 24;
-  38   1              content |= var;
-  39   1              
-  40   1              le = 0;
-  41   1              
-  42   1              for(i=0;i<27;i++)
-  43   1              {
-  44   2                      temp = (0x04000000 >> i);
-  45   2                      
-  46   2                      clk = 0;
-  47   2                      
-  48   2                      if((content & temp) == temp)
-  49   2                              dout = 1;
-  50   2                      else dout = 0;
-  51   2                      
-  52   2                      clk = 1;
-  53   2              }       
-  54   1              
-C51 COMPILER V9.00   PLL                                                                   11/13/2019 22:18:22 PAGE 2   
+   3          #include "utily.h"
+   4          
+   5          unsigned int nint_ratio = 172/*430*/;
+   6          unsigned int r_ratio = 4/*10*/;    
+   7          unsigned long nfrac_ratio = 0;
+   8          unsigned long reg_var[6] = {0x1f867f,0xf6800a,0xfc0001,0x1ae,0x0};
+   9          
+  10          sbit ldo = P0^3;
+  11          sbit dout = P0^4;
+  12          sbit clk = P0^5;
+  13          sbit le = P0^6;
+  14          
+  15          void PLL_Reset()
+  16          {
+  17   1              clk = 0;
+  18   1              dout = 0;
+  19   1              le = 1;
+  20   1      
+  21   1              //reference div ratio
+  22   1              reg_var[1] &= 0xffc000;
+  23   1              reg_var[1] |= r_ratio;
+  24   1      
+  25   1              //n.int div ratio
+  26   1              reg_var[3] &= 0xff0000;
+  27   1              reg_var[3] |= nint_ratio;
+  28   1      
+  29   1              //n.frac div ratio
+  30   1              reg_var[4] &= 0xf00000;
+  31   1              reg_var[4] |= nfrac_ratio;
+  32   1      }
+  33          
+  34          void PLL_WriteReg(unsigned char addr,unsigned long var)
+  35          {
+  36   1              unsigned char i;
+  37   1              unsigned long content = addr,temp;
+  38   1              content = content << 24;
+  39   1              content |= var;
+  40   1              
+  41   1              le = 0;
+  42   1              
+  43   1              for(i=0;i<27;i++)
+  44   1              {
+  45   2                      temp = (0x04000000 >> i);
+  46   2                      
+  47   2                      clk = 0;
+  48   2                      
+  49   2                      if((content & temp) == temp)
+  50   2                              dout = 1;
+  51   2                      else dout = 0;
+  52   2                      
+  53   2                      clk = 1;
+  54   2              }       
+C51 COMPILER V9.00   PLL                                                                   11/23/2019 18:21:45 PAGE 2   
 
-  55   1              clk = 0;
-  56   1              dout = 0;
-  57   1              le = 1;
-  58   1      }
-  59          
-  60          void PLL_Config()
-  61          {
-  62   1              unsigned char i;
-  63   1              for(i=0;i<5;i++)
-  64   1              {
-  65   2                      PLL_WriteReg(i, reg_var[i]);
-  66   2              }
-  67   1      }
-  68          
-  69          signed char PLL_IsLocked()
-  70          {
-  71   1              return ldo;
-  72   1      }
+  55   1              
+  56   1              clk = 0;
+  57   1              dout = 0;
+  58   1              le = 1;
+  59   1      }
+  60          
+  61          void PLL_Config()
+  62          {
+  63   1              unsigned char i;
+  64   1              for(i=0;i<5;i++)
+  65   1              {
+  66   2                      PLL_WriteReg(i, reg_var[i]);
+  67   2      
+  68   2                      le = 1;
+  69   2                      delay_ms(1);
+  70   2                      le = 0;
+  71   2                      delay_ms(1);
+  72   2                      le = 1;
+  73   2              }
+  74   1      }
+  75          
+  76          signed char PLL_IsLocked()
+  77          {
+  78   1              return ldo;
+  79   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    293    ----
+   CODE SIZE        =    313    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

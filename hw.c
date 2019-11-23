@@ -2,8 +2,9 @@
 #include "hw.h"
 #include "rtx.h"
 #include "cmd.h"
+#include "utily.h"
 
-unsigned long sysclk = 24000000; 
+unsigned long sysclk = 16000000; 
 extern unsigned long rtx_baud;
 unsigned char temp;
 
@@ -32,18 +33,43 @@ void HW_IOInit()
 	P5M1 &= ~0x08;
 
 	//set P5.4 as output for sysclk
-	//P5M0 |= 0x10;
-	//P5M1 &= ~0x10;
+	P5M0 |= 0x10;
+	P5M1 &= ~0x10;
 }
 
-//Select P1.7 XTAL as MCLK
 void HW_SysclkInit()
 {
-	//sysclk = 24000000
+	//EAXFR must be set if access to XDATA Regs 
+	P_SW2 |= 0x80;
+
+	//check if internal OSC locked.
+	while((IRC24MCR & 0x01) != 0x01)
+	{
+		;
+	}
+
+	P_SW2 |= 0x80;
+
+	//divide factor 1.
 	CLKDIV = 0x01;
 
-	//use internal IRC,output sysclk to P5.4
-	CKSEL =  0x18;
+	//enable external OSC
+	XOSCCR = 0xC0;
+
+	//check if external OSC locked.
+	while((XOSCCR & 0x01) != 0x01)
+	{
+		;
+	}
+
+	//use external OSC,output sysclk to P5.4
+	CKSEL =  0x11;
+
+	delay_ms(100);
+
+	IRC24MCR = 0x00;
+
+	P_SW2 &= ~0x80;
 }
 
 void HW_T2Init()

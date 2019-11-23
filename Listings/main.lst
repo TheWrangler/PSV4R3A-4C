@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   MAIN                                                                  11/13/2019 22:18:22 PAGE 1   
+C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   52   1              buf[14] = 'c';
   53   1              buf[15] = 'k';
   54   1              buf[16] = '.';
-C51 COMPILER V9.00   MAIN                                                                  11/13/2019 22:18:22 PAGE 2   
+C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 2   
 
   55   1              buf[17] = '.';
   56   1              buf[18] = '.';
@@ -126,7 +126,7 @@ line level    source
  114   1      
  115   1              buf[4] = '\n';
  116   1              return 5;
-C51 COMPILER V9.00   MAIN                                                                  11/13/2019 22:18:22 PAGE 3   
+C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 3   
 
  117   1      }
  118          
@@ -154,10 +154,10 @@ line level    source
  140          
  141          int main()
  142          {
- 143   1              unsigned char cmd,flag = 0;
+ 143   1              unsigned char cmd,flag = 0,ledf = 0;
  144   1                                        
  145   1              //config sysclk
- 146   1              //HW_SysclkInit();
+ 146   1              HW_SysclkInit();
  147   1      
  148   1              //config pins
  149   1              HW_IOInit();
@@ -171,7 +171,7 @@ line level    source
  157   1              len = _sprintf_splashscreen(msg);
  158   1              RTX_SendBytes(msg,len);
  159   1      
- 160   1              delay_ms(2000);
+ 160   1              delay_ms(500);
  161   1      
  162   1              //config dds
  163   1              PLL_Reset();
@@ -190,7 +190,7 @@ line level    source
  176   1              {
  177   2                      if(PLL_IsLocked() != 1)
  178   2                      {
-C51 COMPILER V9.00   MAIN                                                                  11/13/2019 22:18:22 PAGE 4   
+C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 4   
 
  179   3                              PLL_Reset();
  180   3                              PLL_Config();
@@ -237,11 +237,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1088    ----
+   CODE SIZE        =   1093    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     26      15
+   DATA SIZE        =     26      16
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

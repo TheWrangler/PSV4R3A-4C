@@ -140,10 +140,10 @@ void GetPLLLockSta()
 
 int main()
 {
-	unsigned char cmd,flag = 0;
+	unsigned char cmd,flag = 0,ledf = 0;
 				  
 	//config sysclk
-	//HW_SysclkInit();
+	HW_SysclkInit();
 
 	//config pins
  	HW_IOInit();
@@ -157,7 +157,7 @@ int main()
 	len = _sprintf_splashscreen(msg);
 	RTX_SendBytes(msg,len);
 
-	delay_ms(2000);
+	delay_ms(500);
 
 	//config dds
 	PLL_Reset();
