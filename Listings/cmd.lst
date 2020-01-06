@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   CMD                                                                   11/23/2019 18:21:46 PAGE 1   
+C51 COMPILER V9.00   CMD                                                                   01/06/2020 14:24:06 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE CMD
 OBJECT MODULE PLACED IN .\Objects\cmd.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE cmd.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\cmd.lst) OBJECT(.\Objects\
-                    -cmd.obj)
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE cmd.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\cmd.lst) TABS(2) OBJECT(.\
+                    -Objects\cmd.obj)
 
 line level    source
 
@@ -17,35 +17,35 @@ line level    source
    7          
    8          void Cmd_set(unsigned char content)
    9          {
-  10   1              cmd = content;
-  11   1              bValid = 1;
+  10   1        cmd = content;
+  11   1        bValid = 1;
   12   1      }
   13          
   14          signed char Cmd_IsNew()
   15          {
-  16   1              return bValid;
+  16   1        return bValid;
   17   1      }
   18          
   19          void Cmd_get(unsigned char* pCmd)
   20          {
-  21   1              if(!bValid)
-  22   1                      return;
-  23   1              
-  24   1              *pCmd = cmd;
-  25   1              bValid = 0;
-  26   1              return;
+  21   1        if(!bValid)
+  22   1          return;
+  23   1        
+  24   1        *pCmd = cmd;
+  25   1        bValid = 0;
+  26   1        return;
   27   1      }
   28          
   29          void Cmd_clear()
   30          {
-  31   1              bValid = 0;
+  31   1        bValid = 0;
   32   1      }
   33          
   34          void Cmd_reply()
   35          {
-  36   1              unsigned int i;
-  37   1              for(i=0;i<rply_len;i++)
-  38   1                      RTX_Send(rply[i]);
+  36   1        unsigned int i;
+  37   1        for(i=0;i<rply_len;i++)
+  38   1          RTX_Send(rply[i]);
   39   1      }
 
 

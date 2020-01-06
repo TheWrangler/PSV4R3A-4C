@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 1   
+C51 COMPILER V9.00   MAIN                                                                  01/06/2020 14:24:05 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\Objects\main.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.lst) OBJECT(.\Object
-                    -s\main.obj)
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.lst) TABS(2) OBJECT(
+                    -.\Objects\main.obj)
 
 line level    source
 
@@ -23,211 +23,211 @@ line level    source
   13          
   14          unsigned char _sprintf_splashscreen(unsigned char* buf)
   15          {
-  16   1              buf[0] = 'i';
-  17   1              buf[1] = 'n';
-  18   1              buf[2] = 'i';
-  19   1              buf[3] = 't';
-  20   1              buf[4] = ' ';
-  21   1              buf[5] = 'p';
-  22   1              buf[6] = 'r';
-  23   1              buf[7] = 'o';
-  24   1              buf[8] = 'c';
-  25   1              buf[9] = 'e';
-  26   1              buf[10] = 's';
-  27   1              buf[11] = 's';
-  28   1              buf[12] = '.';
-  29   1              buf[13] = '.';
-  30   1              buf[14] = '.';
-  31   1              buf[15] = '\n';
+  16   1        buf[0] = 'i';
+  17   1        buf[1] = 'n';
+  18   1        buf[2] = 'i';
+  19   1        buf[3] = 't';
+  20   1        buf[4] = ' ';
+  21   1        buf[5] = 'p';
+  22   1        buf[6] = 'r';
+  23   1        buf[7] = 'o';
+  24   1        buf[8] = 'c';
+  25   1        buf[9] = 'e';
+  26   1        buf[10] = 's';
+  27   1        buf[11] = 's';
+  28   1        buf[12] = '.';
+  29   1        buf[13] = '.';
+  30   1        buf[14] = '.';
+  31   1        buf[15] = '\n';
   32   1      
-  33   1              return 16;
+  33   1        return 16;
   34   1      }
   35          
   36          unsigned char _sprintf_pllwait(unsigned char* buf)
   37          {
-  38   1              buf[0] = 'w';
-  39   1              buf[1] = 'a';
-  40   1              buf[2] = 'i';
-  41   1              buf[3] = 't';
-  42   1              buf[4] = ' ';
-  43   1              buf[5] = 'f';
-  44   1              buf[6] = 'o';
-  45   1              buf[7] = 'r';
-  46   1              buf[8] = ' ';
-  47   1              buf[9] = 'F';
-  48   1              buf[10] = 'S';
-  49   1              buf[11] = ' ';
-  50   1              buf[12] = 'l';
-  51   1              buf[13] = 'o';
-  52   1              buf[14] = 'c';
-  53   1              buf[15] = 'k';
-  54   1              buf[16] = '.';
-C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 2   
+  38   1        buf[0] = 'w';
+  39   1        buf[1] = 'a';
+  40   1        buf[2] = 'i';
+  41   1        buf[3] = 't';
+  42   1        buf[4] = ' ';
+  43   1        buf[5] = 'f';
+  44   1        buf[6] = 'o';
+  45   1        buf[7] = 'r';
+  46   1        buf[8] = ' ';
+  47   1        buf[9] = 'F';
+  48   1        buf[10] = 'S';
+  49   1        buf[11] = ' ';
+  50   1        buf[12] = 'l';
+  51   1        buf[13] = 'o';
+  52   1        buf[14] = 'c';
+  53   1        buf[15] = 'k';
+  54   1        buf[16] = '.';
+C51 COMPILER V9.00   MAIN                                                                  01/06/2020 14:24:05 PAGE 2   
 
-  55   1              buf[17] = '.';
-  56   1              buf[18] = '.';
-  57   1              buf[19] = '\n';
+  55   1        buf[17] = '.';
+  56   1        buf[18] = '.';
+  57   1        buf[19] = '\n';
   58   1      
-  59   1              return 20;
+  59   1        return 20;
   60   1      }
   61          
   62          unsigned char _sprintf_plllocked(unsigned char* buf)
   63          {
-  64   1              buf[0] = 'F';
-  65   1              buf[1] = 'S';
-  66   1              buf[2] = ' ';
-  67   1              buf[3] = 'l';
-  68   1              buf[4] = 'o';
-  69   1              buf[5] = 'c';
-  70   1              buf[6] = 'k';
-  71   1              buf[7] = 'e';
-  72   1              buf[8] = 'd';
-  73   1              buf[9] = '.';
-  74   1              buf[10] = '.';
-  75   1              buf[11] = '.';
-  76   1              buf[12] = '\n';
+  64   1        buf[0] = 'F';
+  65   1        buf[1] = 'S';
+  66   1        buf[2] = ' ';
+  67   1        buf[3] = 'l';
+  68   1        buf[4] = 'o';
+  69   1        buf[5] = 'c';
+  70   1        buf[6] = 'k';
+  71   1        buf[7] = 'e';
+  72   1        buf[8] = 'd';
+  73   1        buf[9] = '.';
+  74   1        buf[10] = '.';
+  75   1        buf[11] = '.';
+  76   1        buf[12] = '\n';
   77   1      
-  78   1              return 13;
+  78   1        return 13;
   79   1      }
   80          
   81          unsigned char _sprintf_pllunlocked(unsigned char* buf)
   82          {
-  83   1              buf[0] = 'F';
-  84   1              buf[1] = 'S';
-  85   1              buf[2] = ' ';
-  86   1              buf[3] = 'u';
-  87   1              buf[4] = 'n';
-  88   1              buf[5] = 'l';
-  89   1              buf[6] = 'o';
-  90   1              buf[7] = 'c';
-  91   1              buf[8] = 'k';
-  92   1              buf[9] = '.';
-  93   1              buf[10] = '.';
-  94   1              buf[11] = '.';
-  95   1              buf[12] = '\n';
+  83   1        buf[0] = 'F';
+  84   1        buf[1] = 'S';
+  85   1        buf[2] = ' ';
+  86   1        buf[3] = 'u';
+  87   1        buf[4] = 'n';
+  88   1        buf[5] = 'l';
+  89   1        buf[6] = 'o';
+  90   1        buf[7] = 'c';
+  91   1        buf[8] = 'k';
+  92   1        buf[9] = '.';
+  93   1        buf[10] = '.';
+  94   1        buf[11] = '.';
+  95   1        buf[12] = '\n';
   96   1      
-  97   1              return 13;
+  97   1        return 13;
   98   1      }
   99          
  100          
  101          unsigned char _sprintf_float(unsigned char* buf,float var)
  102          {
- 103   1              unsigned char n1,n2;
+ 103   1        unsigned char n1,n2;
  104   1      
- 105   1              n1 = var; 
- 106   1              buf[0] = n1 + 0x30;
- 107   1              buf[1] = '.';
+ 105   1        n1 = var; 
+ 106   1        buf[0] = n1 + 0x30;
+ 107   1        buf[1] = '.';
  108   1      
- 109   1              n2 = var * 10 - n1 * 10;
- 110   1              buf[2] = n2 + 0x30;
+ 109   1        n2 = var * 10 - n1 * 10;
+ 110   1        buf[2] = n2 + 0x30;
  111   1      
- 112   1              n2 = var * 100 - n1 * 100 - n2 * 10;
- 113   1              buf[3] = n2 + 0x30;
+ 112   1        n2 = var * 100 - n1 * 100 - n2 * 10;
+ 113   1          buf[3] = n2 + 0x30;
  114   1      
- 115   1              buf[4] = '\n';
- 116   1              return 5;
-C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 3   
+ 115   1        buf[4] = '\n';
+ 116   1        return 5;
+C51 COMPILER V9.00   MAIN                                                                  01/06/2020 14:24:05 PAGE 3   
 
  117   1      }
  118          
  119          void GetPowerVoltage()
  120          {
- 121   1              unsigned int var;
- 122   1              float fv;
- 123   1              ADC_Get(ADC_CH_P1_0);
- 124   1              delay_ms(100);
- 125   1              var = ADC_Get(ADC_CH_P1_0);
- 126   1              fv = var;
- 127   1              fv = fv / 4096.0;
- 128   1              fv = fv * 3.0;
- 129   1              len = _sprintf_float(msg,fv);
- 130   1              RTX_SendBytes(msg,len); 
+ 121   1        unsigned int var;
+ 122   1        float fv;
+ 123   1        ADC_Get(ADC_CH_P1_0);
+ 124   1        delay_ms(100);
+ 125   1        var = ADC_Get(ADC_CH_P1_0);
+ 126   1        fv = var;
+ 127   1        fv = fv / 4096.0;
+ 128   1        fv = fv * 3.0;
+ 129   1        len = _sprintf_float(msg,fv);
+ 130   1        RTX_SendBytes(msg,len); 
  131   1      }
  132          
  133          void GetPLLLockSta()
  134          {
- 135   1              if(PLL_IsLocked() != 1)
- 136   1                      len = _sprintf_pllunlocked(msg);
- 137   1              else len = _sprintf_plllocked(msg);
- 138   1              RTX_SendBytes(msg,len);
+ 135   1        if(PLL_IsLocked() != 1)
+ 136   1          len = _sprintf_pllunlocked(msg);
+ 137   1        else len = _sprintf_plllocked(msg);
+ 138   1        RTX_SendBytes(msg,len);
  139   1      }
  140          
  141          int main()
  142          {
- 143   1              unsigned char cmd,flag = 0,ledf = 0;
- 144   1                                        
- 145   1              //config sysclk
- 146   1              HW_SysclkInit();
+ 143   1        unsigned char cmd,flag = 0,ledf = 0;
+ 144   1                
+ 145   1        //config sysclk
+ 146   1        HW_SysclkInit();
  147   1      
- 148   1              //config pins
- 149   1              HW_IOInit();
+ 148   1        //config pins
+ 149   1        HW_IOInit();
  150   1      
- 151   1              //config perhaps
- 152   1              HW_T2Init();
- 153   1              HW_IntcInit();
- 154   1              RTX_Init();
- 155   1              ADC_Init();
+ 151   1        //config perhaps
+ 152   1        HW_T2Init();
+ 153   1        HW_IntcInit();
+ 154   1        RTX_Init();
+ 155   1        ADC_Init();
  156   1      
- 157   1              len = _sprintf_splashscreen(msg);
- 158   1              RTX_SendBytes(msg,len);
+ 157   1        len = _sprintf_splashscreen(msg);
+ 158   1        RTX_SendBytes(msg,len);
  159   1      
- 160   1              delay_ms(500);
+ 160   1        delay_ms(500);
  161   1      
- 162   1              //config dds
- 163   1              PLL_Reset();
- 164   1              PLL_Config();
+ 162   1        //config dds
+ 163   1        PLL_Reset();
+ 164   1        PLL_Config();
  165   1      
- 166   1              len = _sprintf_pllwait(msg);
- 167   1              RTX_SendBytes(msg,len);
- 168   1              delay_ms(1000);
- 169   1              if(PLL_IsLocked() == 1)
- 170   1              {
- 171   2                       len = _sprintf_plllocked(msg);
- 172   2                       RTX_SendBytes(msg,len);
- 173   2              }
+ 166   1        len = _sprintf_pllwait(msg);
+ 167   1        RTX_SendBytes(msg,len);
+ 168   1        delay_ms(1000);
+ 169   1        if(PLL_IsLocked() == 1)
+ 170   1        {
+ 171   2           len = _sprintf_plllocked(msg);
+ 172   2           RTX_SendBytes(msg,len);
+ 173   2        }
  174   1      
- 175   1              while(1)
- 176   1              {
- 177   2                      if(PLL_IsLocked() != 1)
- 178   2                      {
-C51 COMPILER V9.00   MAIN                                                                  11/23/2019 18:21:45 PAGE 4   
+ 175   1        while(1)
+ 176   1        {
+ 177   2          if(PLL_IsLocked() != 1)
+ 178   2          {
+C51 COMPILER V9.00   MAIN                                                                  01/06/2020 14:24:05 PAGE 4   
 
- 179   3                              PLL_Reset();
- 180   3                              PLL_Config();
+ 179   3            PLL_Reset();
+ 180   3            PLL_Config();
  181   3      
- 182   3                              len = _sprintf_pllwait(msg);
- 183   3                              RTX_SendBytes(msg,len);
- 184   3                              delay_ms(1000);
+ 182   3            len = _sprintf_pllwait(msg);
+ 183   3            RTX_SendBytes(msg,len);
+ 184   3            delay_ms(1000);
  185   3      
- 186   3                              flag = 1;
- 187   3                      }
- 188   2                      else if(flag == 1)
- 189   2                      {
- 190   3                              len = _sprintf_plllocked(msg);
- 191   3                              RTX_SendBytes(msg,len);
- 192   3                              flag = 0;
- 193   3                      }
+ 186   3            flag = 1;
+ 187   3          }
+ 188   2          else if(flag == 1)
+ 189   2          {
+ 190   3            len = _sprintf_plllocked(msg);
+ 191   3            RTX_SendBytes(msg,len);
+ 192   3            flag = 0;
+ 193   3          }
  194   2      
- 195   2                      if(Cmd_IsNew())
- 196   2                      {
- 197   3                              Cmd_get(&cmd);
- 198   3                              switch(cmd)
- 199   3                              {
- 200   4                                      case 0x00://发射功率：0-正功率值，1-负功率值
- 201   4                                              GetPowerVoltage();
- 202   4                                              break;
- 203   4                                      case 0x01://本振锁定指示
- 204   4                                              GetPLLLockSta();
- 205   4                                              break;
- 206   4                                      case 0x02://以上所有参数
- 207   4                                              GetPowerVoltage();
- 208   4                                              GetPLLLockSta();
- 209   4                                              break;
- 210   4                                      default:
- 211   4                                              break;
- 212   4                              }
- 213   3                      }
- 214   2              }
+ 195   2          if(Cmd_IsNew())
+ 196   2          {
+ 197   3            Cmd_get(&cmd);
+ 198   3            switch(cmd)
+ 199   3            {
+ 200   4              case 0x00://发射功率：0-正功率值，1-负功率值
+ 201   4                GetPowerVoltage();
+ 202   4                break;
+ 203   4              case 0x01://本振锁定指示
+ 204   4                GetPLLLockSta();
+ 205   4                break;
+ 206   4              case 0x02://以上所有参数
+ 207   4                GetPowerVoltage();
+ 208   4                GetPLLLockSta();
+ 209   4                break;
+ 210   4              default:
+ 211   4                break;
+ 212   4            }
+ 213   3          }
+ 214   2        }
  215   1      }
  216          
  217          
