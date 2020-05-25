@@ -10,31 +10,35 @@ unsigned char temp;
 
 void HW_IOInit()
 {
-	//set P0.3 as input
-	P0M0 &= ~0x08;
+	//接收lock
+	P2M0 &= ~0x40;
+	P2M1 &= ~0x40;
+	//DATA
+	P2M0 |= 0x80;
+	P2M1 &= ~0x80;
+	//接收LE
+	P0M0 |= 0x01;
+	P0M1 &= ~0x01;
+	//发射LE
+	P0M0 |= 0x08;
 	P0M1 &= ~0x08;
-	//set P0.4\P0.5\P0.6 as output
-	P0M0 |= 0x70;
-	P0M1 &= ~0x70;
+	//CLK
+	P0M0 |= 0x20;
+	P0M1 &= ~0x20;
+	//发射LOCK
+	P0M0 &= 0x40;
+	P0M1 &= ~0x40;
+	
+//	//set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
+//	P_SW2 |= 0x04;
+//	P5M0 &= ~0x04;//set P5.2 as inout port
+//	P5M1 &= ~0x04;
+//	P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
+//	P5M1 &= ~0x08;
 
-	//set P1.3 as output
-	P1M0 |= 0x08;
-	P1M1 &= ~0x08;
-
-	//set P1.0 as input
-	P1M0 &= ~0x01;
-	P1M1 &= ~0x01;
-
-	//set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
-	P_SW2 |= 0x04;
-	P5M0 &= ~0x04;//set P5.2 as inout port
-	P5M1 &= ~0x04;
-	P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
-	P5M1 &= ~0x08;
-
-	//set P5.4 as output for sysclk
-	P5M0 |= 0x10;
-	P5M1 &= ~0x10;
+//	//set P5.4 as output for sysclk
+//	P5M0 |= 0x10;
+//	P5M1 &= ~0x10;
 }
 
 void HW_SysclkInit()

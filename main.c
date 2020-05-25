@@ -8,7 +8,7 @@
 
 //WARNNING:STC MCU int protype is 16 bit width,not 32 bit width£¡£¡£¡£¡£¡£¡
 
-unsigned char msg[25];
+//unsigned char msg[25];
 unsigned char len;
 
 unsigned char _sprintf_splashscreen(unsigned char* buf)
@@ -126,16 +126,16 @@ void GetPowerVoltage()
 	fv = var;
 	fv = fv / 4096.0;
 	fv = fv * 3.0;
-	len = _sprintf_float(msg,fv);
-	RTX_SendBytes(msg,len);	
+	//len = _sprintf_float(msg,fv);
+	//RTX_SendBytes(msg,len);	
 }
 
 void GetPLLLockSta()
 {
-	if(PLL_IsLocked() != 1)
-		len = _sprintf_pllunlocked(msg);
-	else len = _sprintf_plllocked(msg);
-	RTX_SendBytes(msg,len);
+//	if(PLL_IsLocked() != 1)
+//		len = _sprintf_pllunlocked(msg);
+//	else len = _sprintf_plllocked(msg);
+//	RTX_SendBytes(msg,len);
 }
 
 int main()
@@ -154,15 +154,17 @@ int main()
 	RTX_Init();
 	ADC_Init();
 
-	len = _sprintf_splashscreen(msg);
-	RTX_SendBytes(msg,len);
+	//len = _sprintf_splashscreen(msg);
+	//RTX_SendBytes(msg,len);
 
 	delay_ms(500);
 
 	//config dds
 	PLL_Reset();
-	PLL_Config();
+	PLL_Tx_Config();
+	PLL_Rx_Config();
 
+	/*
 	len = _sprintf_pllwait(msg);
 	RTX_SendBytes(msg,len);
 	delay_ms(1000);
@@ -171,7 +173,8 @@ int main()
 		 len = _sprintf_plllocked(msg);
 		 RTX_SendBytes(msg,len);
 	}
-
+	*/
+	/*
 	while(1)
 	{
 		if(PLL_IsLocked() != 1)
@@ -212,6 +215,7 @@ int main()
 			}
 		}
 	}
+	*/
 }
 
 

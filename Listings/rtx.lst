@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   RTX                                                                   01/06/2020 14:24:06 PAGE 1   
+C51 COMPILER V9.00   RTX                                                                   05/25/2020 14:46:18 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE RTX
 OBJECT MODULE PLACED IN .\Objects\rtx.obj
-COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE rtx.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\rtx.lst) TABS(2) OBJECT(.\
-                    -Objects\rtx.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE rtx.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\rtx.lst) OBJECT(.\Objects\
+                    -rtx.obj)
 
 line level    source
 
@@ -15,41 +15,41 @@ line level    source
    5          
    6          void RTX_Init()
    7          {
-   8   1        //mode 0
-   9   1        S4CON &= ~0x80;
-  10   1        
-  11   1        //select T2 as baud gen.
-  12   1        S4CON &= ~0x40;
-  13   1        
-  14   1        //enable rx
-  15   1        S4CON |= 0x10;
+   8   1              //mode 0
+   9   1              S4CON &= ~0x80;
+  10   1              
+  11   1              //select T2 as baud gen.
+  12   1              S4CON &= ~0x40;
+  13   1              
+  14   1              //enable rx
+  15   1              S4CON |= 0x10;
   16   1      }
   17          
   18          unsigned char RTX_IsRecvInt()
   19          {
-  20   1        if((S4CON & 0x01) == 0x01)
-  21   1          return 1;
-  22   1        else return 0;
+  20   1              if((S4CON & 0x01) == 0x01)
+  21   1                      return 1;
+  22   1              else return 0;
   23   1      }
   24          
   25          void RTX_Recv(unsigned char *buf)
   26          {
-  27   1        *buf = S4BUF;
-  28   1        S4CON &= ~0x01;
+  27   1              *buf = S4BUF;
+  28   1              S4CON &= ~0x01;
   29   1      }
   30          
   31          void RTX_Send(unsigned char buf)
   32          {
-  33   1        S4BUF = buf;
-  34   1        while((S4CON & 0x02) != 0x02);
-  35   1        S4CON &= ~0x02;
+  33   1              S4BUF = buf;
+  34   1              while((S4CON & 0x02) != 0x02);
+  35   1              S4CON &= ~0x02;
   36   1      }
   37          
   38          void RTX_SendBytes(unsigned char* buf,unsigned char len)
   39          {
-  40   1        unsigned char idx;
-  41   1        for(idx=0;idx<len;idx++);
-  42   1          RTX_Send(buf[idx]);
+  40   1              unsigned char idx;
+  41   1              for(idx=0;idx<len;idx++);
+  42   1                      RTX_Send(buf[idx]);
   43   1      }
 
 
@@ -63,7 +63,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
-C51 COMPILER V9.00   RTX                                                                   01/06/2020 14:24:06 PAGE 2   
+C51 COMPILER V9.00   RTX                                                                   05/25/2020 14:46:18 PAGE 2   
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
