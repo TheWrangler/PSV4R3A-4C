@@ -20,3 +20,6 @@ typedef enum tagADC_CH
 
 void ADC_Init();
 unsigned int ADC_Get(ADC_CH ch);
+
+unsigned char GetLO1Voltage();
+unsigned char GetLO3Voltage();

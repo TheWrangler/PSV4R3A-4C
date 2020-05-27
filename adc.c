@@ -1,5 +1,6 @@
 #include "stc8.h"
 #include "adc.h"
+#include "utily.h"
 
 void ADC_Init()
 {
@@ -34,3 +35,24 @@ unsigned int ADC_Get(ADC_CH ch)
 	
 	return var;
 }
+
+unsigned char GetLO1Voltage()
+{
+	unsigned int var;
+	ADC_Get(ADC_CH_P1_0);
+	delay_ms(100);
+	var = ADC_Get(ADC_CH_P1_0);
+	var = (var >> 4);
+	return var;
+}
+
+unsigned char GetLO3Voltage()
+{
+	unsigned int var;
+	ADC_Get(ADC_CH_P1_0);
+	delay_ms(100);
+	var = ADC_Get(ADC_CH_P1_0);
+	var = (var >> 4);
+	return var;
+}
+

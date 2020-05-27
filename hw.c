@@ -17,8 +17,8 @@ void HW_IOInit()
 	P2M0 |= 0x80;
 	P2M1 &= ~0x80;
 	//接收LE
-	P0M0 |= 0x01;
-	P0M1 &= ~0x01;
+	P0M0 |= 0x02;
+	P0M1 &= ~0x02;
 	//发射LE
 	P0M0 |= 0x08;
 	P0M1 &= ~0x08;
@@ -28,17 +28,28 @@ void HW_IOInit()
 	//发射LOCK
 	P0M0 &= 0x40;
 	P0M1 &= ~0x40;
-	
-//	//set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
-//	P_SW2 |= 0x04;
-//	P5M0 &= ~0x04;//set P5.2 as inout port
-//	P5M1 &= ~0x04;
-//	P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
-//	P5M1 &= ~0x08;
 
-//	//set P5.4 as output for sysclk
-//	P5M0 |= 0x10;
-//	P5M1 &= ~0x10;
+	//发射检波
+	P1M0 &= 0x02;
+	P1M1 &= ~0x02;
+
+	//发射供电控制
+	P1M0 |= 0x01;
+	P1M1 &= ~0x01;
+	//发射功率控制电压
+	P1M0 |= 0x08;
+	P1M1 &= ~0x08;
+	
+	//set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
+	P_SW2 |= 0x04;
+	P5M0 &= ~0x04;//set P5.2 as inout port
+	P5M1 &= ~0x04;
+	P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
+	P5M1 &= ~0x08;
+
+	//set P5.4 as output for sysclk
+	P5M0 |= 0x10;
+	P5M1 &= ~0x10;
 }
 
 void HW_SysclkInit()

@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   PLL                                                                   05/25/2020 14:46:18 PAGE 1   
+C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE PLL
@@ -13,158 +13,201 @@ line level    source
    3          #include "utily.h"
    4          
    5          //发射4300MHz
-   6          unsigned int tx_nint_ratio = 430/*430*/;
-   7          unsigned int tx_r_ratio = 4/*10*/;         
-   8          unsigned long tx_nfrac_ratio = 0;
-   9          unsigned long tx_reg_var[6] = {0x1f867f,0xf6800a,0xfc0001,0x1ae,0x0};
-  10          //接收4289.231MHz
-  11          unsigned int rx_nint_ratio = 428/*430*/;
-  12          unsigned int rx_r_ratio = 4/*10*/;         
-  13          unsigned long rx_nfrac_ratio = 967940;
-  14          unsigned long rx_reg_var[6] = {0x1f867f,0xf6800a,0xfc0001,0x1ae,0x0};
-  15          
-  16          sbit ldo = P0^3;
-  17          
-  18          sbit dout = P2^7;
-  19          sbit clk = P0^5;
-  20          sbit tx_le = P0^3;
-  21          sbit rx_le = P0^0;
-  22          
-  23          void PLL_Reset()
-  24          {
-  25   1              clk = 0;
-  26   1              dout = 0;
-  27   1              rx_le = 1;
-  28   1              tx_le = 1;
-  29   1      
-  30   1              //tx
-  31   1              //reference div ratio
-  32   1              tx_reg_var[1] &= 0xffc000;
-  33   1              tx_reg_var[1] |= tx_r_ratio;
-  34   1      
-  35   1              //n.int div ratio
-  36   1              tx_reg_var[3] &= 0xff0000;
-  37   1              tx_reg_var[3] |= tx_nint_ratio;
-  38   1      
-  39   1              //n.frac div ratio
-  40   1              tx_reg_var[4] &= 0xf00000;
-  41   1              tx_reg_var[4] |= tx_nfrac_ratio;
-  42   1      
-  43   1      
-  44   1              //rx
-  45   1              //reference div ratio
-  46   1              rx_reg_var[1] &= 0xffc000;
-  47   1              rx_reg_var[1] |= rx_r_ratio;
-  48   1      
-  49   1              //n.int div ratio
-  50   1              rx_reg_var[3] &= 0xff0000;
-  51   1              rx_reg_var[3] |= rx_nint_ratio;
-  52   1      
-  53   1              //n.frac div ratio
-  54   1              rx_reg_var[4] &= 0xf00000;
-C51 COMPILER V9.00   PLL                                                                   05/25/2020 14:46:18 PAGE 2   
+   6          double tx_freq = 4300.0;
+   7          unsigned int tx_nint_ratio = 430/*430*/;
+   8          unsigned char tx_r_ratio = 4/*10*/;        
+   9          unsigned long tx_nfrac_ratio = 0;
+  10          unsigned long tx_reg_var[6] = {0x1f86ff,0xf6800a,0xe00000,0x1ae,0x0};
+  11          
+  12          //接收4289.231MHz
+  13          double rx_freq = 4289.231;
+  14          unsigned int rx_nint_ratio = 428/*430*/;
+  15          unsigned char rx_r_ratio = 4/*10*/;        
+  16          unsigned long rx_nfrac_ratio = 15487048;
+  17          unsigned long rx_reg_var[6] = {0x1f86ff,0xf6800a,0xe00000,0x1ae,0x0};
+  18          
+  19          sbit tx_lock = P0^6;
+  20          sbit rx_lock = P2^6;
+  21          
+  22          sbit dout = P2^7;
+  23          sbit clk = P0^5;
+  24          sbit tx_le = P0^3;
+  25          sbit rx_le = P0^1;
+  26          
+  27          void PLL_Reset()
+  28          {
+  29   1              clk = 0;
+  30   1              dout = 0;
+  31   1              rx_le = 1;
+  32   1              tx_le = 1;
+  33   1      }
+  34          
+  35          void PLL_Init()
+  36          {
+  37   1              //tx
+  38   1              //reference div ratio
+  39   1              tx_reg_var[1] &= 0xffc000;
+  40   1              tx_reg_var[1] |= tx_r_ratio;
+  41   1      
+  42   1              //n.int div ratio
+  43   1              tx_reg_var[3] &= 0xff0000;
+  44   1              tx_reg_var[3] |= tx_nint_ratio;
+  45   1      
+  46   1              //n.frac div ratio
+  47   1              tx_reg_var[4] &= 0x000000;
+  48   1              tx_reg_var[4] |= tx_nfrac_ratio;
+  49   1      
+  50   1      
+  51   1              //rx
+  52   1              //reference div ratio
+  53   1              rx_reg_var[1] &= 0xffc000;
+  54   1              rx_reg_var[1] |= rx_r_ratio;
+C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 2   
 
-  55   1              rx_reg_var[4] |= rx_nfrac_ratio;
-  56   1      }
-  57          
-  58          void PLL_WriteTxReg(unsigned char addr,unsigned long var)
-  59          {
-  60   1              unsigned char i;
-  61   1              unsigned long content = addr,temp;
-  62   1              content = content << 24;
-  63   1              content |= var;
-  64   1              
-  65   1              tx_le = 0;
-  66   1              
-  67   1              for(i=0;i<27;i++)
-  68   1              {
-  69   2                      temp = (0x04000000 >> i);
-  70   2                      
-  71   2                      clk = 0;
-  72   2                      
-  73   2                      if((content & temp) == temp)
-  74   2                              dout = 1;
-  75   2                      else dout = 0;
-  76   2                      
-  77   2                      clk = 1;
-  78   2              }       
-  79   1              
-  80   1              clk = 0;
-  81   1              dout = 0;
-  82   1              tx_le = 1;
-  83   1      }
-  84          
-  85          void PLL_WriteRxReg(unsigned char addr,unsigned long var)
-  86          {
-  87   1              unsigned char i;
-  88   1              unsigned long content = addr,temp;
-  89   1              content = content << 24;
-  90   1              content |= var;
-  91   1              
-  92   1              rx_le = 0;
-  93   1              
-  94   1              for(i=0;i<27;i++)
-  95   1              {
-  96   2                      temp = (0x04000000 >> i);
-  97   2                      
-  98   2                      clk = 0;
-  99   2                      
- 100   2                      if((content & temp) == temp)
- 101   2                              dout = 1;
- 102   2                      else dout = 0;
- 103   2                      
- 104   2                      clk = 1;
- 105   2              }       
- 106   1              
- 107   1              clk = 0;
- 108   1              dout = 0;
- 109   1              rx_le = 1;
- 110   1      }
- 111          
- 112          void PLL_Tx_Config()
- 113          {
- 114   1              unsigned char i;
- 115   1              for(i=0;i<5;i++)
- 116   1              {
-C51 COMPILER V9.00   PLL                                                                   05/25/2020 14:46:18 PAGE 3   
+  55   1      
+  56   1              //n.int div ratio
+  57   1              rx_reg_var[3] &= 0xff0000;
+  58   1              rx_reg_var[3] |= rx_nint_ratio;
+  59   1      
+  60   1              //n.frac div ratio
+  61   1              rx_reg_var[4] &= 0x000000;
+  62   1              rx_reg_var[4] |= rx_nfrac_ratio;
+  63   1      }
+  64          
+  65          void PLL_Adjust(char var)
+  66          {
+  67   1              double temp;
+  68   1      
+  69   1              tx_freq += var;
+  70   1              temp = tx_freq / 10.0;
+  71   1              tx_nint_ratio = temp;
+  72   1      
+  73   1              temp =  temp - tx_nint_ratio;
+  74   1              temp =  temp * 4096.0;
+  75   1              temp *= 4096.0; 
+  76   1              tx_nfrac_ratio = temp;
+  77   1      
+  78   1      
+  79   1              rx_freq += var;
+  80   1              temp = rx_freq / 10.0;
+  81   1              rx_nint_ratio = temp;
+  82   1      
+  83   1              temp =  temp - rx_nint_ratio;
+  84   1              temp =  temp * 4096.0;
+  85   1              temp *= 4096.0; 
+  86   1              rx_nfrac_ratio = temp;
+  87   1      
+  88   1              PLL_Reset();
+  89   1              PLL_Init();
+  90   1              PLL_Tx_Config();
+  91   1              PLL_Rx_Config();
+  92   1      }
+  93          
+  94          void PLL_WriteTxReg(unsigned char addr,unsigned long var)
+  95          {
+  96   1              unsigned char i;
+  97   1              unsigned long content = addr,temp;
+  98   1              content = content << 24;
+  99   1              content |= var;
+ 100   1              
+ 101   1              tx_le = 0;
+ 102   1              
+ 103   1              for(i=0;i<27;i++)
+ 104   1              {
+ 105   2                      temp = (0x04000000 >> i);
+ 106   2                      
+ 107   2                      clk = 0;
+ 108   2                      
+ 109   2                      if((content & temp) == temp)
+ 110   2                              dout = 1;
+ 111   2                      else dout = 0;
+ 112   2                      
+ 113   2                      clk = 1;
+ 114   2              }       
+ 115   1              
+ 116   1              clk = 0;
+C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 3   
 
- 117   2                      PLL_WriteTxReg(i, tx_reg_var[i]);
- 118   2      
- 119   2                      tx_le = 1;
- 120   2                      delay_ms(1);
- 121   2                      tx_le = 0;
- 122   2                      delay_ms(1);
- 123   2                      tx_le = 1;
- 124   2              }
- 125   1      }
- 126          
- 127          void PLL_Rx_Config()
- 128          {
- 129   1              unsigned char i;
- 130   1              for(i=0;i<5;i++)
+ 117   1              dout = 0;
+ 118   1              tx_le = 1;
+ 119   1      }
+ 120          
+ 121          void PLL_WriteRxReg(unsigned char addr,unsigned long var)
+ 122          {
+ 123   1              unsigned char i;
+ 124   1              unsigned long content = addr,temp;
+ 125   1              content = content << 24;
+ 126   1              content |= var;
+ 127   1              
+ 128   1              rx_le = 0;
+ 129   1              
+ 130   1              for(i=0;i<27;i++)
  131   1              {
- 132   2                      PLL_WriteRxReg(i, rx_reg_var[i]);
- 133   2      
- 134   2                      rx_le = 1;
- 135   2                      delay_ms(1);
- 136   2                      rx_le = 0;
- 137   2                      delay_ms(1);
- 138   2                      rx_le = 1;
- 139   2              }
- 140   1      }
- 141          
- 142          signed char PLL_IsLocked()
- 143          {
- 144   1              return ldo;
- 145   1      }
+ 132   2                      temp = (0x04000000 >> i);
+ 133   2                      
+ 134   2                      clk = 0;
+ 135   2                      
+ 136   2                      if((content & temp) == temp)
+ 137   2                              dout = 1;
+ 138   2                      else dout = 0;
+ 139   2                      
+ 140   2                      clk = 1;
+ 141   2              }       
+ 142   1              
+ 143   1              clk = 0;
+ 144   1              dout = 0;
+ 145   1              rx_le = 1;
+ 146   1      }
+ 147          
+ 148          void PLL_Tx_Config()
+ 149          {
+ 150   1              unsigned char i;
+ 151   1              for(i=0;i<5;i++)
+ 152   1              {
+ 153   2                      PLL_WriteTxReg(i, tx_reg_var[i]);
+ 154   2      
+ 155   2                      tx_le = 1;
+ 156   2                      delay_ms(1);
+ 157   2                      tx_le = 0;
+ 158   2                      delay_ms(1);
+ 159   2                      tx_le = 1;
+ 160   2              }
+ 161   1      }
+ 162          
+ 163          void PLL_Rx_Config()
+ 164          {
+ 165   1              unsigned char i;
+ 166   1              for(i=0;i<5;i++)
+ 167   1              {
+ 168   2                      PLL_WriteRxReg(i, rx_reg_var[i]);
+ 169   2      
+ 170   2                      rx_le = 1;
+ 171   2                      delay_ms(1);
+ 172   2                      rx_le = 0;
+ 173   2                      delay_ms(1);
+ 174   2                      rx_le = 1;
+ 175   2              }
+ 176   1      }
+ 177          
+ 178          signed char PLL_IsTxLocked()
+C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 4   
+
+ 179          {
+ 180   1              return tx_lock;
+ 181   1      }
+ 182          
+ 183          signed char PLL_IsRxLocked()
+ 184          {
+ 185   1              return rx_lock;
+ 186   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    615    ----
+   CODE SIZE        =    950    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     64      30
+   DATA SIZE        =     70      35
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

@@ -4,6 +4,7 @@
 ".\Objects\hw.obj",
 ".\Objects\cmd.obj",
 ".\Objects\adc.obj",
-".\Objects\utily.obj" 
+".\Objects\utily.obj",
+".\Objects\pwm.obj" 
 TO ".\Objects\PSV4R3A-4C" 
 PRINT(".\Listings\PSV4R3A-4C.m51") RAMSIZE(256) 

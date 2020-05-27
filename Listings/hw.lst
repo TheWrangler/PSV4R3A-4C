@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   HW                                                                    05/25/2020 14:46:18 PAGE 1   
+C51 COMPILER V9.00   HW                                                                    05/27/2020 21:24:05 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE HW
@@ -27,8 +27,8 @@ line level    source
   17   1              P2M0 |= 0x80;
   18   1              P2M1 &= ~0x80;
   19   1              //接收LE
-  20   1              P0M0 |= 0x01;
-  21   1              P0M1 &= ~0x01;
+  20   1              P0M0 |= 0x02;
+  21   1              P0M1 &= ~0x02;
   22   1              //发射LE
   23   1              P0M0 |= 0x08;
   24   1              P0M1 &= ~0x08;
@@ -38,83 +38,96 @@ line level    source
   28   1              //发射LOCK
   29   1              P0M0 &= 0x40;
   30   1              P0M1 &= ~0x40;
-  31   1              
-  32   1      //      //set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
-  33   1      //      P_SW2 |= 0x04;
-  34   1      //      P5M0 &= ~0x04;//set P5.2 as inout port
-  35   1      //      P5M1 &= ~0x04;
-  36   1      //      P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
-  37   1      //      P5M1 &= ~0x08;
-  38   1      
-  39   1      //      //set P5.4 as output for sysclk
-  40   1      //      P5M0 |= 0x10;
-  41   1      //      P5M1 &= ~0x10;
-  42   1      }
-  43          
-  44          void HW_SysclkInit()
-  45          {
-  46   1              //EAXFR must be set if access to XDATA Regs 
-  47   1              P_SW2 |= 0x80;
-  48   1              
-  49   1              //divide factor 1.
-  50   1              CLKDIV = 0x01;
-  51   1      
-  52   1              //check if internal OSC locked.
-  53   1              while((IRC24MCR & 0x01) != 0x01)
-  54   1              {
-C51 COMPILER V9.00   HW                                                                    05/25/2020 14:46:18 PAGE 2   
+  31   1      
+  32   1              //发射检波
+  33   1              P1M0 &= 0x02;
+  34   1              P1M1 &= ~0x02;
+  35   1      
+  36   1              //发射供电控制
+  37   1              P1M0 |= 0x01;
+  38   1              P1M1 &= ~0x01;
+  39   1              //发射功率控制电压
+  40   1              P1M0 |= 0x08;
+  41   1              P1M1 &= ~0x08;
+  42   1              
+  43   1              //set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
+  44   1              P_SW2 |= 0x04;
+  45   1              P5M0 &= ~0x04;//set P5.2 as inout port
+  46   1              P5M1 &= ~0x04;
+  47   1              P5M0 |= 0x08;//set P5.3 as output,TODO: if push up with 3K~5K resistor,comment this.
+  48   1              P5M1 &= ~0x08;
+  49   1      
+  50   1              //set P5.4 as output for sysclk
+  51   1              P5M0 |= 0x10;
+  52   1              P5M1 &= ~0x10;
+  53   1      }
+  54          
+C51 COMPILER V9.00   HW                                                                    05/27/2020 21:24:05 PAGE 2   
 
-  55   2                      ;
-  56   2              }
-  57   1      
-  58   1              P_SW2 &= ~0x80;
-  59   1      }
-  60          
-  61          void HW_T2Init()
-  62          {
-  63   1              unsigned int div = 65536 - sysclk / (4 * rtx_baud);
-  64   1              
-  65   1              //set counter
-  66   1              T2L = div & 0xff;
-  67   1              T2H = (div & 0xff00) >> 8;
-  68   1              
-  69   1              //enable P1.3 output for T2 overflow
-  70   1              INTCLKO |= 0x04;
-  71   1              
-  72   1              //counter with sysclk,,
-  73   1              AUXR |= 0x04;
-  74   1              
-  75   1              //work as timer
-  76   1              AUXR &= ~0x08;
-  77   1              
-  78   1              //start timer
-  79   1              AUXR |= 0x10;
-  80   1      }
-  81          
-  82          void HW_IntcInit()
-  83          {
-  84   1              //enable uart4 int.
-  85   1              IE2 |= 0x10;
-  86   1      
-  87   1              //enable global int.
-  88   1              IE |= 0x80;
-  89   1      }
-  90          
-  91          void HW_Uart4ISR(void) interrupt 18
-  92          {
-  93   1              if(RTX_IsRecvInt()==1)
-  94   1              {
-  95   2                      RTX_Recv(&temp);
-  96   2                      Cmd_set(temp);
-  97   2              }
-  98   1      }
+  55          void HW_SysclkInit()
+  56          {
+  57   1              //EAXFR must be set if access to XDATA Regs 
+  58   1              P_SW2 |= 0x80;
+  59   1              
+  60   1              //divide factor 1.
+  61   1              CLKDIV = 0x01;
+  62   1      
+  63   1              //check if internal OSC locked.
+  64   1              while((IRC24MCR & 0x01) != 0x01)
+  65   1              {
+  66   2                      ;
+  67   2              }
+  68   1      
+  69   1              P_SW2 &= ~0x80;
+  70   1      }
+  71          
+  72          void HW_T2Init()
+  73          {
+  74   1              unsigned int div = 65536 - sysclk / (4 * rtx_baud);
+  75   1              
+  76   1              //set counter
+  77   1              T2L = div & 0xff;
+  78   1              T2H = (div & 0xff00) >> 8;
+  79   1              
+  80   1              //enable P1.3 output for T2 overflow
+  81   1              INTCLKO |= 0x04;
+  82   1              
+  83   1              //counter with sysclk,,
+  84   1              AUXR |= 0x04;
+  85   1              
+  86   1              //work as timer
+  87   1              AUXR &= ~0x08;
+  88   1              
+  89   1              //start timer
+  90   1              AUXR |= 0x10;
+  91   1      }
+  92          
+  93          void HW_IntcInit()
+  94          {
+  95   1              //enable uart4 int.
+  96   1              IE2 |= 0x10;
+  97   1      
+  98   1              //enable global int.
+  99   1              IE |= 0x80;
+ 100   1      }
+ 101          
+ 102          void HW_Uart4ISR(void) interrupt 18
+ 103          {
+ 104   1              if(RTX_IsRecvInt()==1)
+ 105   1              {
+ 106   2                      RTX_Recv(&temp);
+ 107   2                      Cmd_set(temp);
+ 108   2              }
+ 109   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    202    ----
+   CODE SIZE        =    241    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
+C51 COMPILER V9.00   HW                                                                    05/27/2020 21:24:05 PAGE 3   
+
    DATA SIZE        =      5    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----

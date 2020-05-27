@@ -1,5 +1,12 @@
 void Cmd_set(unsigned char content);
-signed char Cmd_get(unsigned char* pCmd);
-void Cmd_clear();
+void Cmd_Del(unsigned char size);
+unsigned char Cmd_IsNew();
 void Cmd_reply();
-signed char Cmd_IsNew();
+
+void BuildPwrRply();
+void BuildLOLock();
+void BulidPwr();
+
+void process_a1(unsigned char cmd);
+void process_a2(unsigned char cmd);
+void process_a3(unsigned char cmd);
