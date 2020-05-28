@@ -3,6 +3,7 @@
 #include "cmd.h"
 #include "pll.h"
 #include "utily.h"
+#include "pwm.h"
 
 unsigned char tx_pwr;
 
@@ -11,6 +12,17 @@ unsigned char rply_len = 0;
 unsigned char cmd[5];
 unsigned char cmd_backup[2];
 unsigned char cmd_len = 0;
+
+idata unsigned int table[64];
+
+void Cmd_InitTable()
+{
+	table[0] = 795;
+
+
+
+	table[63] = 490;
+}
 
 void Cmd_set(unsigned char content)
 {
@@ -153,9 +165,9 @@ void BulidPwr()
 	rply_len = 5;
 }
 
-void process_a1(unsigned char cmd)
+void process_a1(unsigned char cmd_wd)
 {
-	switch(cmd)
+	switch(cmd_wd)
 	{
 	   	case 0x00:
 	   	  	BuildPwrRply();
@@ -173,20 +185,36 @@ void process_a1(unsigned char cmd)
 		Cmd_reply();
 }
 
-void process_a2(unsigned char cmd)
+void process_a2(unsigned char cmd_wd)
 {
+	double per;
+	if(cmd_wd == 0x01)
+	{
+
+	}
+	else if(cmd_wd == 0x02)
+	{
+		per = table[cmd[3]];
+		per = per / 10.0;
+		PWM_Ctrl(per);	
+	}
 	Cmd_Del(5);
 }
 
-void process_a3(unsigned char cmd)
+void process_a3(unsigned char cmd_wd)
 {
-	if(cmd == 0x01)
+	char var;
+
+	if(cmd_wd == 0x01)
 	{
-		PLL_Adjust(1);
+		var = cmd[3] & 0x7f;
+		PLL_Adjust(var);
 	}
-	else if(cmd == 0x81)
+	else if(cmd_wd == 0x81)
 	{
-		PLL_Adjust(-1);
+		var = cmd[3] & 0x7f;
+		var = -var;
+		PLL_Adjust(var);
 	}
 
 	Cmd_Del(5);

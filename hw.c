@@ -77,8 +77,9 @@ void HW_T2Init()
 	T2L = div & 0xff;
 	T2H = (div & 0xff00) >> 8;
 	
+	//comment this because P1.3 used for PWM Output
 	//enable P1.3 output for T2 overflow
-	INTCLKO |= 0x04;
+	//INTCLKO |= 0x04;
 	
 	//counter with sysclk,,
 	AUXR |= 0x04;

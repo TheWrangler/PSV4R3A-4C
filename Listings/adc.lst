@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   ADC                                                                   05/27/2020 21:24:05 PAGE 1   
+C51 COMPILER V9.00   ADC                                                                   05/28/2020 23:24:46 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE ADC
 OBJECT MODULE PLACED IN .\Objects\adc.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE adc.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\adc.lst) OBJECT(.\Objects\
-                    -adc.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE adc.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\adc.lst) OBJECT(.\Ob
+                    -jects\adc.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   52   1              ADC_Get(ADC_CH_P1_0);
   53   1              delay_ms(100);
   54   1              var = ADC_Get(ADC_CH_P1_0);
-C51 COMPILER V9.00   ADC                                                                   05/27/2020 21:24:05 PAGE 2   
+C51 COMPILER V9.00   ADC                                                                   05/28/2020 23:24:46 PAGE 2   
 
   55   1              var = (var >> 4);
   56   1              return var;

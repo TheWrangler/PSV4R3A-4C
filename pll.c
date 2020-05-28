@@ -9,11 +9,11 @@ unsigned char tx_r_ratio = 4/*10*/;
 unsigned long tx_nfrac_ratio = 0;
 unsigned long tx_reg_var[6] = {0x1f86ff,0xf6800a,0xe00000,0x1ae,0x0};
 
-//接收4289.231MHz
-double rx_freq = 4289.231;
+//接收4289.2MHz
+double rx_freq = 4289.2;
 unsigned int rx_nint_ratio = 428/*430*/;
 unsigned char rx_r_ratio = 4/*10*/;	   
-unsigned long rx_nfrac_ratio = 15487048;
+unsigned long rx_nfrac_ratio = 15435038;
 unsigned long rx_reg_var[6] = {0x1f86ff,0xf6800a,0xe00000,0x1ae,0x0};
 
 sbit tx_lock = P0^6;

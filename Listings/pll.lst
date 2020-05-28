@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 1   
+C51 COMPILER V9.00   PLL                                                                   05/28/2020 23:24:45 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE PLL
 OBJECT MODULE PLACED IN .\Objects\pll.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE pll.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\pll.lst) OBJECT(.\Objects\
-                    -pll.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE pll.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\pll.lst) OBJECT(.\Ob
+                    -jects\pll.obj)
 
 line level    source
 
@@ -19,11 +19,11 @@ line level    source
    9          unsigned long tx_nfrac_ratio = 0;
   10          unsigned long tx_reg_var[6] = {0x1f86ff,0xf6800a,0xe00000,0x1ae,0x0};
   11          
-  12          //接收4289.231MHz
-  13          double rx_freq = 4289.231;
+  12          //接收4289.2MHz
+  13          double rx_freq = 4289.2;
   14          unsigned int rx_nint_ratio = 428/*430*/;
   15          unsigned char rx_r_ratio = 4/*10*/;        
-  16          unsigned long rx_nfrac_ratio = 15487048;
+  16          unsigned long rx_nfrac_ratio = 15435038;
   17          unsigned long rx_reg_var[6] = {0x1f86ff,0xf6800a,0xe00000,0x1ae,0x0};
   18          
   19          sbit tx_lock = P0^6;
@@ -62,7 +62,7 @@ line level    source
   52   1              //reference div ratio
   53   1              rx_reg_var[1] &= 0xffc000;
   54   1              rx_reg_var[1] |= rx_r_ratio;
-C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 2   
+C51 COMPILER V9.00   PLL                                                                   05/28/2020 23:24:45 PAGE 2   
 
   55   1      
   56   1              //n.int div ratio
@@ -126,7 +126,7 @@ line level    source
  114   2              }       
  115   1              
  116   1              clk = 0;
-C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 3   
+C51 COMPILER V9.00   PLL                                                                   05/28/2020 23:24:45 PAGE 3   
 
  117   1              dout = 0;
  118   1              tx_le = 1;
@@ -190,7 +190,7 @@ line level    source
  176   1      }
  177          
  178          signed char PLL_IsTxLocked()
-C51 COMPILER V9.00   PLL                                                                   05/27/2020 21:24:04 PAGE 4   
+C51 COMPILER V9.00   PLL                                                                   05/28/2020 23:24:45 PAGE 4   
 
  179          {
  180   1              return tx_lock;
@@ -203,11 +203,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    950    ----
+   CODE SIZE        =   1416    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   XDATA SIZE       =     70      35
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     70      35
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   HW                                                                    05/27/2020 21:24:05 PAGE 1   
+C51 COMPILER V9.00   HW                                                                    05/28/2020 23:24:45 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE HW
 OBJECT MODULE PLACED IN .\Objects\hw.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE hw.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\hw.lst) OBJECT(.\Objects\hw
-                    -.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE hw.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\hw.lst) OBJECT(.\Obje
+                    -cts\hw.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   52   1              P5M1 &= ~0x10;
   53   1      }
   54          
-C51 COMPILER V9.00   HW                                                                    05/27/2020 21:24:05 PAGE 2   
+C51 COMPILER V9.00   HW                                                                    05/28/2020 23:24:45 PAGE 2   
 
   55          void HW_SysclkInit()
   56          {
@@ -89,46 +89,47 @@ line level    source
   77   1              T2L = div & 0xff;
   78   1              T2H = (div & 0xff00) >> 8;
   79   1              
-  80   1              //enable P1.3 output for T2 overflow
-  81   1              INTCLKO |= 0x04;
-  82   1              
-  83   1              //counter with sysclk,,
-  84   1              AUXR |= 0x04;
-  85   1              
-  86   1              //work as timer
-  87   1              AUXR &= ~0x08;
-  88   1              
-  89   1              //start timer
-  90   1              AUXR |= 0x10;
-  91   1      }
-  92          
-  93          void HW_IntcInit()
-  94          {
-  95   1              //enable uart4 int.
-  96   1              IE2 |= 0x10;
-  97   1      
-  98   1              //enable global int.
-  99   1              IE |= 0x80;
- 100   1      }
- 101          
- 102          void HW_Uart4ISR(void) interrupt 18
- 103          {
- 104   1              if(RTX_IsRecvInt()==1)
- 105   1              {
- 106   2                      RTX_Recv(&temp);
- 107   2                      Cmd_set(temp);
- 108   2              }
- 109   1      }
+  80   1              //comment this because P1.3 used for PWM Output
+  81   1              //enable P1.3 output for T2 overflow
+  82   1              //INTCLKO |= 0x04;
+  83   1              
+  84   1              //counter with sysclk,,
+  85   1              AUXR |= 0x04;
+  86   1              
+  87   1              //work as timer
+  88   1              AUXR &= ~0x08;
+  89   1              
+  90   1              //start timer
+  91   1              AUXR |= 0x10;
+  92   1      }
+  93          
+  94          void HW_IntcInit()
+  95          {
+  96   1              //enable uart4 int.
+  97   1              IE2 |= 0x10;
+  98   1      
+  99   1              //enable global int.
+ 100   1              IE |= 0x80;
+ 101   1      }
+ 102          
+ 103          void HW_Uart4ISR(void) interrupt 18
+ 104          {
+ 105   1              if(RTX_IsRecvInt()==1)
+ 106   1              {
+ 107   2                      RTX_Recv(&temp);
+ 108   2                      Cmd_set(temp);
+ 109   2              }
+ 110   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    241    ----
+   CODE SIZE        =    253    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----    ----
-C51 COMPILER V9.00   HW                                                                    05/27/2020 21:24:05 PAGE 3   
+   XDATA SIZE       =      5    ----
+C51 COMPILER V9.00   HW                                                                    05/28/2020 23:24:45 PAGE 3   
 
-   DATA SIZE        =      5    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

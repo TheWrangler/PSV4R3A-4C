@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   CMD                                                                   05/27/2020 21:24:05 PAGE 1   
+C51 COMPILER V9.00   CMD                                                                   05/28/2020 23:24:46 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE CMD
 OBJECT MODULE PLACED IN .\Objects\cmd.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE cmd.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\cmd.lst) OBJECT(.\Objects\
-                    -cmd.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE cmd.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\cmd.lst) OBJECT(.\Ob
+                    -jects\cmd.obj)
 
 line level    source
 
@@ -13,212 +13,239 @@ line level    source
    3          #include "cmd.h"
    4          #include "pll.h"
    5          #include "utily.h"
-   6          
-   7          unsigned char tx_pwr;
-   8          
-   9          unsigned char rply[8];
-  10          unsigned char rply_len = 0;
-  11          unsigned char cmd[5];
-  12          unsigned char cmd_backup[2];
-  13          unsigned char cmd_len = 0;
-  14          
-  15          void Cmd_set(unsigned char content)
-  16          {
-  17   1              if(cmd_len == 5)
-  18   1                      cmd_len = 0;
-  19   1      
-  20   1              cmd[cmd_len] = content;
-  21   1              cmd_len++;
-  22   1      }
-  23          
-  24          void Cmd_Del(unsigned char size)
-  25          {
-  26   1              unsigned char remain,i;
-  27   1              if(cmd_len < size)
-  28   1                      size = cmd_len;
-  29   1      
-  30   1              remain = cmd_len - size;
-  31   1              for(i=0;i<remain;i++)
-  32   1                      cmd_backup[i] = cmd[size+i];
-  33   1              for(i=0;i<remain;i++)
-  34   1                      cmd[i] = cmd_backup[i];
-  35   1              cmd_len =  remain;
-  36   1      }
-  37          
-  38          unsigned char Cmd_IsNew()
-  39          {
-  40   1              if(cmd_len < 3)
-  41   1                      return 0;
-  42   1      
-  43   1              if(cmd[0] == 0xa1)
-  44   1              {
-  45   2                      if((cmd[2] != 0x00) && (cmd[2] != 0x0a))
-  46   2                      {
-  47   3                              Cmd_Del(3);
-  48   3                              return 0;
-  49   3                      }
-  50   2      
-  51   2                      if(cmd_len < 4)
-  52   2                              return 0;
-  53   2      
-  54   2                      if(cmd[3] != CRC(cmd,3))
-C51 COMPILER V9.00   CMD                                                                   05/27/2020 21:24:05 PAGE 2   
+   6          #include "pwm.h"
+   7          
+   8          unsigned char tx_pwr;
+   9          
+  10          unsigned char rply[8];
+  11          unsigned char rply_len = 0;
+  12          unsigned char cmd[5];
+  13          unsigned char cmd_backup[2];
+  14          unsigned char cmd_len = 0;
+  15          
+  16          idata unsigned int table[64];
+  17          
+  18          void Cmd_InitTable()
+  19          {
+  20   1              table[0] = 795;
+  21   1      
+  22   1      
+  23   1      
+  24   1              table[63] = 490;
+  25   1      }
+  26          
+  27          void Cmd_set(unsigned char content)
+  28          {
+  29   1              if(cmd_len == 5)
+  30   1                      cmd_len = 0;
+  31   1      
+  32   1              cmd[cmd_len] = content;
+  33   1              cmd_len++;
+  34   1      }
+  35          
+  36          void Cmd_Del(unsigned char size)
+  37          {
+  38   1              unsigned char remain,i;
+  39   1              if(cmd_len < size)
+  40   1                      size = cmd_len;
+  41   1      
+  42   1              remain = cmd_len - size;
+  43   1              for(i=0;i<remain;i++)
+  44   1                      cmd_backup[i] = cmd[size+i];
+  45   1              for(i=0;i<remain;i++)
+  46   1                      cmd[i] = cmd_backup[i];
+  47   1              cmd_len =  remain;
+  48   1      }
+  49          
+  50          unsigned char Cmd_IsNew()
+  51          {
+  52   1              if(cmd_len < 3)
+  53   1                      return 0;
+  54   1      
+C51 COMPILER V9.00   CMD                                                                   05/28/2020 23:24:46 PAGE 2   
 
-  55   2                      {
-  56   3                              Cmd_Del(3);
-  57   3                              return 0;
-  58   3                      }
-  59   2                      else return 1;
-  60   2              }
-  61   1              else if(cmd[0] == 0xa2)
-  62   1              {
-  63   2                      if((cmd[2] != 0x01) && (cmd[2] != 0x02))
-  64   2                      {
-  65   3                              Cmd_Del(3);
-  66   3                              return 0;
-  67   3                      }
-  68   2      
-  69   2                      if(cmd_len < 5)
-  70   2                              return 0;
-  71   2      
-  72   2                      if(cmd[4] != CRC(cmd,4))
-  73   2                      {
-  74   3                              Cmd_Del(3);
-  75   3                              return 0;
-  76   3                      }
-  77   2                      else return 1; 
-  78   2              }
-  79   1              else if(cmd[0] == 0xa3)
-  80   1              {
-  81   2                      if((cmd[2] != 0x01) && (cmd[2] != 0x81))
-  82   2                      {
-  83   3                              Cmd_Del(3);
-  84   3                              return 0;
-  85   3                      }
-  86   2      
-  87   2                      if(cmd_len < 5)
-  88   2                              return 0;
-  89   2      
-  90   2                      if(cmd[4] != CRC(cmd,4))
-  91   2                      {
-  92   3                              Cmd_Del(3);
-  93   3                              return 0;
-  94   3                      }
-  95   2                      else return 1; 
-  96   2              }
-  97   1              else
-  98   1              {
-  99   2                      Cmd_Del(3);
- 100   2                      return 0;
- 101   2              }
- 102   1      }
- 103          
- 104          
- 105          void Cmd_reply()
- 106          {
- 107   1              unsigned int i;
- 108   1              for(i=0;i<rply_len;i++)
- 109   1                      RTX_Send(rply[i]);
- 110   1      
- 111   1              rply_len = 0;
- 112   1      }
- 113          
- 114          void BuildPwrRply()
- 115          {
- 116   1              rply[0] = 0xa1;
-C51 COMPILER V9.00   CMD                                                                   05/27/2020 21:24:05 PAGE 3   
+  55   1              if(cmd[0] == 0xa1)
+  56   1              {
+  57   2                      if((cmd[2] != 0x00) && (cmd[2] != 0x0a))
+  58   2                      {
+  59   3                              Cmd_Del(3);
+  60   3                              return 0;
+  61   3                      }
+  62   2      
+  63   2                      if(cmd_len < 4)
+  64   2                              return 0;
+  65   2      
+  66   2                      if(cmd[3] != CRC(cmd,3))
+  67   2                      {
+  68   3                              Cmd_Del(3);
+  69   3                              return 0;
+  70   3                      }
+  71   2                      else return 1;
+  72   2              }
+  73   1              else if(cmd[0] == 0xa2)
+  74   1              {
+  75   2                      if((cmd[2] != 0x01) && (cmd[2] != 0x02))
+  76   2                      {
+  77   3                              Cmd_Del(3);
+  78   3                              return 0;
+  79   3                      }
+  80   2      
+  81   2                      if(cmd_len < 5)
+  82   2                              return 0;
+  83   2      
+  84   2                      if(cmd[4] != CRC(cmd,4))
+  85   2                      {
+  86   3                              Cmd_Del(3);
+  87   3                              return 0;
+  88   3                      }
+  89   2                      else return 1; 
+  90   2              }
+  91   1              else if(cmd[0] == 0xa3)
+  92   1              {
+  93   2                      if((cmd[2] != 0x01) && (cmd[2] != 0x81))
+  94   2                      {
+  95   3                              Cmd_Del(3);
+  96   3                              return 0;
+  97   3                      }
+  98   2      
+  99   2                      if(cmd_len < 5)
+ 100   2                              return 0;
+ 101   2      
+ 102   2                      if(cmd[4] != CRC(cmd,4))
+ 103   2                      {
+ 104   3                              Cmd_Del(3);
+ 105   3                              return 0;
+ 106   3                      }
+ 107   2                      else return 1; 
+ 108   2              }
+ 109   1              else
+ 110   1              {
+ 111   2                      Cmd_Del(3);
+ 112   2                      return 0;
+ 113   2              }
+ 114   1      }
+ 115          
+ 116          
+C51 COMPILER V9.00   CMD                                                                   05/28/2020 23:24:46 PAGE 3   
 
- 117   1              rply[1] = 0x05;
- 118   1              rply[2] = 0x00;
- 119   1              rply[3] = 0x00;
- 120   1              rply[4] = GetLO1Voltage();
- 121   1              rply[5] = GetLO1Voltage();
- 122   1              rply[6] = GetLO3Voltage();
- 123   1              rply[7] = CRC(rply,7);
- 124   1              rply_len = 8;
- 125   1      }
- 126          
- 127          void BuildLOLock()
- 128          {
- 129   1              rply[0] = 0xa1;
- 130   1              rply[1] = 0x02;
- 131   1              rply[2] = 0x01;
- 132   1      
- 133   1              rply[3] = PLL_IsRxLocked();
- 134   1              rply[3] = (rply[2] << 1);
- 135   1      
- 136   1              rply[3] |= PLL_IsTxLocked();
- 137   1              rply[3] = (rply[2] << 1);
- 138   1              rply[3] |= PLL_IsTxLocked();
- 139   1      
- 140   1              rply[4] = CRC(rply,4);
- 141   1              rply_len = 5;
- 142   1      }
- 143          
- 144          void BulidPwr()
- 145          {
- 146   1              rply[0] = 0xa1;
- 147   1              rply[1] = 0x02;
- 148   1              rply[2] = 0x02;
- 149   1      
- 150   1              rply[3] = tx_pwr/2;
+ 117          void Cmd_reply()
+ 118          {
+ 119   1              unsigned int i;
+ 120   1              for(i=0;i<rply_len;i++)
+ 121   1                      RTX_Send(rply[i]);
+ 122   1      
+ 123   1              rply_len = 0;
+ 124   1      }
+ 125          
+ 126          void BuildPwrRply()
+ 127          {
+ 128   1              rply[0] = 0xa1;
+ 129   1              rply[1] = 0x05;
+ 130   1              rply[2] = 0x00;
+ 131   1              rply[3] = 0x00;
+ 132   1              rply[4] = GetLO1Voltage();
+ 133   1              rply[5] = GetLO1Voltage();
+ 134   1              rply[6] = GetLO3Voltage();
+ 135   1              rply[7] = CRC(rply,7);
+ 136   1              rply_len = 8;
+ 137   1      }
+ 138          
+ 139          void BuildLOLock()
+ 140          {
+ 141   1              rply[0] = 0xa1;
+ 142   1              rply[1] = 0x02;
+ 143   1              rply[2] = 0x01;
+ 144   1      
+ 145   1              rply[3] = PLL_IsRxLocked();
+ 146   1              rply[3] = (rply[2] << 1);
+ 147   1      
+ 148   1              rply[3] |= PLL_IsTxLocked();
+ 149   1              rply[3] = (rply[2] << 1);
+ 150   1              rply[3] |= PLL_IsTxLocked();
  151   1      
  152   1              rply[4] = CRC(rply,4);
  153   1              rply_len = 5;
  154   1      }
  155          
- 156          void process_a1(unsigned char cmd)
+ 156          void BulidPwr()
  157          {
- 158   1              switch(cmd)
- 159   1              {
- 160   2                      case 0x00:
- 161   2                              BuildPwrRply();
- 162   2                              break;
- 163   2                      case 0x01:
- 164   2                              BuildLOLock();
- 165   2                              break;
- 166   2                      case 0x02:
- 167   2                              BulidPwr();     
- 168   2                              break;
- 169   2              }
- 170   1      
- 171   1              Cmd_Del(4);
- 172   1              if(rply_len != 0)
- 173   1                      Cmd_reply();
- 174   1      }
- 175          
- 176          void process_a2(unsigned char cmd)
- 177          {
- 178   1              Cmd_Del(5);
-C51 COMPILER V9.00   CMD                                                                   05/27/2020 21:24:05 PAGE 4   
+ 158   1              rply[0] = 0xa1;
+ 159   1              rply[1] = 0x02;
+ 160   1              rply[2] = 0x02;
+ 161   1      
+ 162   1              rply[3] = tx_pwr/2;
+ 163   1      
+ 164   1              rply[4] = CRC(rply,4);
+ 165   1              rply_len = 5;
+ 166   1      }
+ 167          
+ 168          void process_a1(unsigned char cmd_wd)
+ 169          {
+ 170   1              switch(cmd_wd)
+ 171   1              {
+ 172   2                      case 0x00:
+ 173   2                              BuildPwrRply();
+ 174   2                              break;
+ 175   2                      case 0x01:
+ 176   2                              BuildLOLock();
+ 177   2                              break;
+ 178   2                      case 0x02:
+C51 COMPILER V9.00   CMD                                                                   05/28/2020 23:24:46 PAGE 4   
 
- 179   1      }
-*** WARNING C280 IN LINE 176 OF CMD.C: 'cmd': unreferenced local variable
- 180          
- 181          void process_a3(unsigned char cmd)
- 182          {
- 183   1              if(cmd == 0x01)
- 184   1              {
- 185   2                      PLL_Adjust(1);
- 186   2              }
- 187   1              else if(cmd == 0x81)
- 188   1              {
- 189   2                      PLL_Adjust(-1);
- 190   2              }
- 191   1      
- 192   1              Cmd_Del(5);
- 193   1      }
+ 179   2                              BulidPwr();     
+ 180   2                              break;
+ 181   2              }
+ 182   1      
+ 183   1              Cmd_Del(4);
+ 184   1              if(rply_len != 0)
+ 185   1                      Cmd_reply();
+ 186   1      }
+ 187          
+ 188          void process_a2(unsigned char cmd_wd)
+ 189          {
+ 190   1              double per;
+ 191   1              if(cmd_wd == 0x01)
+ 192   1              {
+ 193   2      
+ 194   2              }
+ 195   1              else if(cmd_wd == 0x02)
+ 196   1              {
+ 197   2                      per = table[cmd[3]];
+ 198   2                      per = per / 10.0;
+ 199   2                      PWM_Ctrl(per);  
+ 200   2              }
+ 201   1              Cmd_Del(5);
+ 202   1      }
+ 203          
+ 204          void process_a3(unsigned char cmd_wd)
+ 205          {
+ 206   1              char var;
+ 207   1      
+ 208   1              if(cmd_wd == 0x01)
+ 209   1              {
+ 210   2                      var = cmd[3] & 0x7f;
+ 211   2                      PLL_Adjust(var);
+ 212   2              }
+ 213   1              else if(cmd_wd == 0x81)
+ 214   1              {
+ 215   2                      var = cmd[3] & 0x7f;
+ 216   2                      var = -var;
+ 217   2                      PLL_Adjust(var);
+ 218   2              }
+ 219   1      
+ 220   1              Cmd_Del(5);
+ 221   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    487    ----
+   CODE SIZE        =    764    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   XDATA SIZE       =     18       8
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     18       4
-   IDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =    128    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

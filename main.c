@@ -26,6 +26,8 @@ int main()
 	ADC_Init();
 	PWM_Init();
 
+	Cmd_InitTable();
+
 	delay_ms(200);
 
 	//config dds
@@ -35,6 +37,8 @@ int main()
 	PLL_Rx_Config();
 
 	delay_ms(200);
+
+//	PWM_Ctrl(79.5);
 
 	while(1)
 	{
