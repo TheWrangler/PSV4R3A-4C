@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   MAIN                                                                  05/28/2020 23:24:45 PAGE 1   
+C51 COMPILER V9.00   MAIN                                                                  06/01/2020 12:52:12 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
@@ -52,44 +52,32 @@ line level    source
   42   1      
   43   1              while(1)
   44   1              {
-  45   2      //              if(PLL_IsRxLocked() != 1)
-  46   2      //              {
-  47   2      //                      PLL_Reset();
-  48   2      //                      PLL_Rx_Config();
-  49   2      //              }
-  50   2                      
-  51   2      //              if(PLL_IsTxLocked() != 1)
-  52   2      //              {
-  53   2      //                      PLL_Reset();
-  54   2      //                      PLL_Tx_Config();
-C51 COMPILER V9.00   MAIN                                                                  05/28/2020 23:24:45 PAGE 2   
+  45   2                      if(Cmd_IsNew())
+  46   2                      {
+  47   3                              switch(cmd[0])
+  48   3                              {
+  49   4                                      case 0xa1:
+  50   4                                              process_a1(cmd[2]);
+  51   4                                              break;
+  52   4                                      case 0xa2:
+  53   4                                              process_a2(cmd[2]);
+  54   4                                              break;
+C51 COMPILER V9.00   MAIN                                                                  06/01/2020 12:52:12 PAGE 2   
 
-  55   2      //              }
-  56   2      
-  57   2                      if(Cmd_IsNew())
-  58   2                      {
-  59   3                              switch(cmd[0])
-  60   3                              {
-  61   4                                      case 0xa1:
-  62   4                                              process_a1(cmd[2]);
-  63   4                                              break;
-  64   4                                      case 0xa2:
-  65   4                                              process_a2(cmd[2]);
-  66   4                                              break;
-  67   4                                      case 0xa3:
-  68   4                                              process_a3(cmd[2]);
-  69   4                                              break;
-  70   4                                      default:
-  71   4                                              break;
-  72   4                              }
-  73   3                      }
-  74   2              }
-  75   1      }
-  76          
-  77          
-  78          
-  79          
-  80          
+  55   4                                      case 0xa3:
+  56   4                                              process_a3(cmd[2]);
+  57   4                                              break;
+  58   4                                      default:
+  59   4                                              break;
+  60   4                              }
+  61   3                      }
+  62   2              }
+  63   1      }
+  64          
+  65          
+  66          
+  67          
+  68          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

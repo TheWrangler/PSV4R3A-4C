@@ -42,18 +42,6 @@ int main()
 
 	while(1)
 	{
-//		if(PLL_IsRxLocked() != 1)
-//		{
-//			PLL_Reset();
-//			PLL_Rx_Config();
-//		}
-		
-//		if(PLL_IsTxLocked() != 1)
-//		{
-//			PLL_Reset();
-//			PLL_Tx_Config();
-//		}
-
 		if(Cmd_IsNew())
 		{
 			switch(cmd[0])

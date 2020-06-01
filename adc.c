@@ -39,9 +39,9 @@ unsigned int ADC_Get(ADC_CH ch)
 unsigned char GetLO1Voltage()
 {
 	unsigned int var;
-	ADC_Get(ADC_CH_P1_0);
+	ADC_Get(ADC_CH_P1_1);
 	delay_ms(100);
-	var = ADC_Get(ADC_CH_P1_0);
+	var = ADC_Get(ADC_CH_P1_1);
 	var = (var >> 4);
 	return var;
 }
@@ -49,9 +49,9 @@ unsigned char GetLO1Voltage()
 unsigned char GetLO3Voltage()
 {
 	unsigned int var;
-	ADC_Get(ADC_CH_P1_0);
+	ADC_Get(ADC_CH_P1_1);
 	delay_ms(100);
-	var = ADC_Get(ADC_CH_P1_0);
+	var = ADC_Get(ADC_CH_P1_1);
 	var = (var >> 4);
 	return var;
 }
