@@ -5,6 +5,7 @@
 #include "pll.h"
 #include "utily.h"
 #include "pwm.h"
+#include "dac.h"
 
 unsigned char tx_pwr = 0;
 unsigned char tx_enable = 0;
@@ -17,15 +18,21 @@ unsigned char cmd[5];
 unsigned char cmd_backup[5];
 unsigned char cmd_len = 0;
 
-idata unsigned int table[64];
+idata unsigned char tx_ctrl_table[64];
+idata signed char tx_pwr_table[40];
 
 void Cmd_InitTable()
 {
-	table[0] = 795;
+	tx_ctrl_table[0] = 795;
 
 
 
-	table[63] = 490;
+	tx_ctrl_table[63] = 490;
+
+	tx_pwr_table[0] = 0;
+
+
+    tx_pwr_table[0] = 0;
 }
 
 void Cmd_set(unsigned char content)
@@ -135,14 +142,27 @@ void Cmd_ack(unsigned char size)
 }
 
 void BuildPwrRply()
-{
+{ 	
+	unsigned char var = GetLO1Voltage();
+
 	rply[0]	= 0xa1;
 	rply[1]	= 0x05;
 	rply[2]	= 0x00;
-	rply[3]	= 0x00;
-	rply[4]	= GetLO1Voltage();
-	rply[5]	= GetLO1Voltage();
-	rply[6]	= GetLO3Voltage();
+
+	rply[3]	= tx_pwr_table[var];
+
+	if(PLL_IsTxLocked() == 1)
+		rply[4]	= 5;
+	else rply[4] = 4;
+
+	if(PLL_IsTxLocked() == 1)
+		rply[5]	= 5;
+	else rply[5] = 4;
+
+	if(PLL_IsRxLocked() == 1)
+		rply[6]	= 5;
+	else rply[6] = 4;
+
 	rply[7]	= CRC(rply,7);
 	rply_len = 8;
 }
@@ -166,11 +186,13 @@ void BuildLOLockRply()
 
 void BuildTxPwrRply()
 {
+	unsigned char var = GetLO1Voltage();
+
    	rply[0]	= 0xa1;
 	rply[1]	= 0x02;
 	rply[2]	= 0x02;
 
-	rply[3]	= tx_pwr/2;
+	rply[3]	= tx_pwr_table[var];
 
 	rply[4]	= CRC(rply,4);
 	rply_len = 5;
@@ -182,7 +204,9 @@ void BuildTxLO1PwrRply()
 	rply[1]	= 0x02;
 	rply[2]	= 0x03;
 
-	rply[3]	= GetLO1Voltage();
+	if(PLL_IsTxLocked() == 1)
+		rply[3]	= 5;
+	else rply[3] = 4;
 
 	rply[4]	= CRC(rply,4);
 	rply_len = 5;
@@ -194,7 +218,9 @@ void BuildTxLO2PwrRply()
 	rply[1]	= 0x02;
 	rply[2]	= 0x04;
 
-	rply[3]	= GetLO1Voltage();
+	if(PLL_IsTxLocked() == 1)
+		rply[3]	= 5;
+	else rply[3] = 4;
 
 	rply[4]	= CRC(rply,4);
 	rply_len = 5;
@@ -206,7 +232,9 @@ void BuildRxLO3Rply()
 	rply[1]	= 0x02;
 	rply[2]	= 0x05;
 
-	rply[3]	= GetLO3Voltage();
+	if(PLL_IsRxLocked() == 1)
+		rply[3]	= 5;
+	else rply[3] = 4;
 
 	rply[4]	= CRC(rply,4);
 	rply_len = 5;	
@@ -331,7 +359,6 @@ void process_a1(unsigned char cmd_wd)
 
 void process_a2(unsigned char cmd_wd)
 {
-	double per;
 	if(cmd_wd == 0x01)
 	{
 		 tx_enable = cmd[3];
@@ -341,9 +368,7 @@ void process_a2(unsigned char cmd_wd)
 	else if(cmd_wd == 0x02)
 	{
 		tx_pwr = cmd[3];
-		per = table[cmd[3]];
-		per = per / 10.0;
-		PWM_Ctrl(per);	
+		WriteI2C(tx_ctrl_table[cmd[3]]);	
 		Cmd_ack(5);
 	}
 	Cmd_Del(5);
