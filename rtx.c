@@ -37,7 +37,7 @@ void RTX_Send(unsigned char buf)
 
 void RTX_SendBytes(unsigned char* buf,unsigned char len)
 {
-	unsigned char idx;
-	for(idx=0;idx<len;idx++);
+	unsigned char idx=0;
+	for(idx=0;idx<len;idx++)
 		RTX_Send(buf[idx]);
 }

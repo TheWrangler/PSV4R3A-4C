@@ -10,20 +10,23 @@ unsigned char temp;
 
 void HW_IOInit()
 {
-	//set P0.3 as input
-	P0M0 &= ~0x08;
+	//set P0.3 as input,LOCK
+	P0M0 &= ~0x08; 
 	P0M1 &= ~0x08;
-	//set P0.4\P0.5\P0.6 as output
-	P0M0 |= 0x70;
+	//set P0.4\P0.5\P0.6 as output,DATA\CLK\LE
+	P0M0 |= 0x70; 
 	P0M1 &= ~0x70;
+	//set P0.7 as output,TXEN
+	P0M0 |= 0x80; 
+	P0M1 &= ~0x80;
 
 	//set P1.3 as output
 	P1M0 |= 0x08;
 	P1M1 &= ~0x08;
 
-	//set P1.0 as input
-	P1M0 &= ~0x01;
-	P1M1 &= ~0x01;
+	//set P1.1 as input,TSSI
+	P1M0 &= ~0x02;
+	P1M1 &= ~0x02;
 
 	//set P5.2/P5.3 as uart,RX=P5.2,TX=P5.3
 	P_SW2 |= 0x04;

@@ -1,14 +1,25 @@
 #include "rtx.h"
 
-unsigned char cmd;
+unsigned char cmd[2] = {0x00,0x00};
 signed char bValid = 0;
-unsigned char rply[10];
-unsigned char rply_len = 0;
 
 void Cmd_set(unsigned char content)
 {
-	cmd = content;
-	bValid = 1;
+	cmd[0] = cmd[1];
+	cmd[1] = content;
+	if(cmd[0] != 0xa1)
+	{
+		bValid = 0;
+		return;
+	}
+
+	if(cmd[1] > 0x04)
+	{
+		bValid = 0;
+		return;
+	}
+	
+	bValid = 1;	
 }
 
 signed char Cmd_IsNew()
@@ -21,7 +32,7 @@ void Cmd_get(unsigned char* pCmd)
 	if(!bValid)
 		return;
 	
-	*pCmd = cmd;
+	*pCmd = cmd[1];
 	bValid = 0;
 	return;
 }
@@ -29,11 +40,4 @@ void Cmd_get(unsigned char* pCmd)
 void Cmd_clear()
 {
 	bValid = 0;
-}
-
-void Cmd_reply()
-{
-	unsigned int i;
-	for(i=0;i<rply_len;i++)
-		RTX_Send(rply[i]);
 }

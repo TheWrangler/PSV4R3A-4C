@@ -12,6 +12,8 @@ sbit dout = P0^4;
 sbit clk = P0^5;
 sbit le = P0^6;
 
+sbit txen = P0^7;
+
 void PLL_Reset()
 {
 	clk = 0;
@@ -76,4 +78,11 @@ void PLL_Config()
 signed char PLL_IsLocked()
 {
 	return ldo;
+}
+
+void PLL_TxEn(unsigned char en)
+{
+	if(en == 1)
+		txen = 1;
+	else txen = 0;	
 }

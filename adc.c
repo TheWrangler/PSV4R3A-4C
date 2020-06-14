@@ -11,11 +11,15 @@ void ADC_Init()
 	
 	//set speed
 	ADCCFG &= ~0x0f;
+
+	ADC_Get(ADC_CH_P1_1);
 }
 
 unsigned int ADC_Get(ADC_CH ch)
 {
 	unsigned int var;
+
+	ADC_CONTR &= ~0x20;
 	
 	//select ch
 	ADC_CONTR &= 0xf0;
@@ -25,7 +29,7 @@ unsigned int ADC_Get(ADC_CH ch)
 	ADC_CONTR |= 0x40;
 	
 	//wait for convert finished
-	while(ADC_CONTR & 0x40 == 0x40);
+	while((ADC_CONTR & 0x20) != 0x20);
 	
 	//read result
 	var = ADC_RES;
