@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:14:08 PAGE 1   
+C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:29:17 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE PLL
@@ -17,11 +17,11 @@ line level    source
    7          unsigned long nfrac_ratio = 0;
    8          unsigned long reg_var[6] = {0x1f867f,0xf6800a,0xfc0001,0x1ae,0x0};
    9          
-  10          unsigned int tx_vol[50] = {0x0060,0x0066,0x006d,0x0072,0x007a,0x0083,0x0096,0x009e,0x00ae,0x00ba,
+  10          unsigned int tx_vol[51] = {0x0060,0x0066,0x006d,0x0072,0x007a,0x0083,0x0096,0x009e,0x00ae,0x00ba,
   11                                                                  0x00c3,0x00ce,0x00d4,0x00ed,0x00f8,0x00ff,0x0105,0x0122,0x00142,0x016b,
   12                                                                  0x019f,0x01d5,0x01e8,0x0225,0x024d,0x028a,0x02c6,0x030a,0x0352,0x0394,
   13                                                                  0x03dc,0x0435,0x0495,0x04eb,0x0545,0x05b0,0x061e,0x0674,0x06e8,0x0763,
-  14                                                                  0x07d0,0x0865,0x08f0,0x0974,0x09f9,0x0a7f,0x0af7,0x0b70,0x0bbb,0x0c50};
+  14                                                                  0x07d0,0x0865,0x08f0,0x0974,0x09f9,0x0a7f,0x0af7,0x0b70,0x0bbb,0x0c50,0xe8b};
   15          
   16          sbit ldo = P0^3;
   17          sbit dout = P0^4;
@@ -62,7 +62,7 @@ line level    source
   52   1              {
   53   2                      temp = (0x04000000 >> i);
   54   2                      
-C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:14:08 PAGE 2   
+C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:29:17 PAGE 2   
 
   55   2                      clk = 0;
   56   2                      
@@ -110,7 +110,7 @@ line level    source
   98   1              unsigned char temp;
   99   1              signed char var;
  100   1      
- 101   1              for(temp=0;temp<50;temp++)
+ 101   1              for(temp=0;temp<51;temp++)
  102   1              {
  103   2                      if(tx_vol[temp] > pwr)
  104   2                              break;
@@ -126,7 +126,7 @@ line level    source
  114   2              }
  115   1              else temp = var;
  116   1      
-C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:14:08 PAGE 3   
+C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:29:17 PAGE 3   
 
  117   1              return temp;     
  118   1      }
@@ -135,7 +135,7 @@ line level    source
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    536    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =    132      15
+   XDATA SIZE       =    134      15
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

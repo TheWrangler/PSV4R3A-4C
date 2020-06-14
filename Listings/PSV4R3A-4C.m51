@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        06/14/2020  22:14:09  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/14/2020  22:45:25  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -41,12 +41,12 @@ LINK MAP OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
             IDATA   0008H     0001H     UNIT         ?STACK
 
             * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
-            XDATA   0000H     0084H     UNIT         ?XD?PLL
-            XDATA   0084H     0010H     UNIT         _XDATA_GROUP_
-            XDATA   0094H     0006H     UNIT         ?XD?MAIN
-            XDATA   009AH     0005H     UNIT         ?XD?HW
-            XDATA   009FH     0004H     UNIT         ?XD?RTX
-            XDATA   00A3H     0003H     UNIT         ?XD?CMD
+            XDATA   0000H     0086H     UNIT         ?XD?PLL
+            XDATA   0086H     0010H     UNIT         _XDATA_GROUP_
+            XDATA   0096H     0006H     UNIT         ?XD?MAIN
+            XDATA   009CH     0005H     UNIT         ?XD?HW
+            XDATA   00A1H     0004H     UNIT         ?XD?RTX
+            XDATA   00A5H     0003H     UNIT         ?XD?CMD
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
@@ -56,33 +56,33 @@ LINK MAP OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
             CODE    0096H     01F5H     UNIT         ?C?LIB_CODE
             CODE    028BH     00C4H     UNIT         ?PR?_PLL_WRITEREG?PLL
             CODE    034FH     00BDH     UNIT         ?PR?PLL_RESET?PLL
-            CODE    040CH     00ACH     UNIT         ?C_INITSEG
-            CODE    04B8H     005FH     UNIT         ?PR?MAIN?MAIN
-            CODE    0517H     0054H     UNIT         ?PR?GETPOWERVOLTAGE?MAIN
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 2
+            CODE    040CH     00AEH     UNIT         ?C_INITSEG
+            CODE    04BAH     005FH     UNIT         ?PR?MAIN?MAIN
+            CODE    0519H     0054H     UNIT         ?PR?GETPOWERVOLTAGE?MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 2
 
 
-            CODE    056BH     0050H     UNIT         ?PR?PLL_CONFIG?PLL
-            CODE    05BBH     004FH     UNIT         ?PR?HW_UART4ISR?HW
-            CODE    060AH     004AH     UNIT         ?PR?HW_T2INIT?HW
-            CODE    0654H     0037H     UNIT         ?PR?_PLL_GETATT?PLL
-            CODE    068BH     0034H     UNIT         ?PR?HW_IOINIT?HW
-            CODE    06BFH     002DH     UNIT         ?PR?_RTX_SENDBYTES?RTX
-            CODE    06ECH     002DH     UNIT         ?PR?_CMD_SET?CMD
-            CODE    0719H     0022H     UNIT         ?PR?GETPLLLOCKSTA?MAIN
-            CODE    073BH     0020H     UNIT         ?PR?_ADC_GET?ADC
-            CODE    075BH     0020H     UNIT         ?PR?_DELAY_MS?UTILY
-            CODE    077BH     0014H     UNIT         ?PR?HW_SYSCLKINIT?HW
-            CODE    078FH     0013H     UNIT         ?PR?_CMD_GET?CMD
-            CODE    07A2H     000EH     UNIT         ?PR?ADC_INIT?ADC
-            CODE    07B0H     000BH     UNIT         ?PR?RTX_ISRECVINT?RTX
-            CODE    07BBH     000BH     UNIT         ?PR?_RTX_SEND?RTX
-            CODE    07C6H     000AH     UNIT         ?PR?_PLL_TXEN?PLL
-            CODE    07D0H     000AH     UNIT         ?PR?RTX_INIT?RTX
-            CODE    07DAH     0009H     UNIT         ?PR?_RTX_RECV?RTX
-            CODE    07E3H     0007H     UNIT         ?PR?HW_INTCINIT?HW
-            CODE    07EAH     0006H     UNIT         ?PR?PLL_ISLOCKED?PLL
-            CODE    07F0H     0006H     UNIT         ?PR?CMD_ISNEW?CMD
+            CODE    056DH     0050H     UNIT         ?PR?PLL_CONFIG?PLL
+            CODE    05BDH     004FH     UNIT         ?PR?HW_UART4ISR?HW
+            CODE    060CH     004AH     UNIT         ?PR?HW_T2INIT?HW
+            CODE    0656H     0037H     UNIT         ?PR?_PLL_GETATT?PLL
+            CODE    068DH     0034H     UNIT         ?PR?HW_IOINIT?HW
+            CODE    06C1H     002DH     UNIT         ?PR?_RTX_SENDBYTES?RTX
+            CODE    06EEH     002DH     UNIT         ?PR?_CMD_SET?CMD
+            CODE    071BH     0022H     UNIT         ?PR?GETPLLLOCKSTA?MAIN
+            CODE    073DH     0020H     UNIT         ?PR?_ADC_GET?ADC
+            CODE    075DH     0020H     UNIT         ?PR?_DELAY_MS?UTILY
+            CODE    077DH     0014H     UNIT         ?PR?HW_SYSCLKINIT?HW
+            CODE    0791H     0013H     UNIT         ?PR?_CMD_GET?CMD
+            CODE    07A4H     000EH     UNIT         ?PR?ADC_INIT?ADC
+            CODE    07B2H     000BH     UNIT         ?PR?RTX_ISRECVINT?RTX
+            CODE    07BDH     000BH     UNIT         ?PR?_RTX_SEND?RTX
+            CODE    07C8H     000AH     UNIT         ?PR?_PLL_TXEN?PLL
+            CODE    07D2H     000AH     UNIT         ?PR?RTX_INIT?RTX
+            CODE    07DCH     0009H     UNIT         ?PR?_RTX_RECV?RTX
+            CODE    07E5H     0007H     UNIT         ?PR?HW_INTCINIT?HW
+            CODE    07ECH     0006H     UNIT         ?PR?PLL_ISLOCKED?PLL
+            CODE    07F2H     0006H     UNIT         ?PR?CMD_ISNEW?CMD
 
 
 
@@ -103,7 +103,7 @@ SEGMENT                            XDATA_GROUP
   +--> ?PR?MAIN?MAIN
   +--> ?C_INITSEG
 
-?PR?MAIN?MAIN                    0084H    0001H
+?PR?MAIN?MAIN                    0086H    0001H
   +--> ?PR?HW_SYSCLKINIT?HW
   +--> ?PR?HW_IOINIT?HW
   +--> ?PR?HW_T2INIT?HW
@@ -119,24 +119,24 @@ SEGMENT                            XDATA_GROUP
   +--> ?PR?GETPLLLOCKSTA?MAIN
   +--> ?PR?_PLL_TXEN?PLL
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 3
 
 
 ?PR?ADC_INIT?ADC                 -----    -----
   +--> ?PR?_ADC_GET?ADC
 
-?PR?PLL_CONFIG?PLL               0085H    0001H
+?PR?PLL_CONFIG?PLL               0087H    0001H
   +--> ?PR?_PLL_WRITEREG?PLL
   +--> ?PR?_DELAY_MS?UTILY
 
-?PR?_PLL_WRITEREG?PLL            0086H    000EH
+?PR?_PLL_WRITEREG?PLL            0088H    000EH
 
-?PR?GETPOWERVOLTAGE?MAIN         0085H    0003H
+?PR?GETPOWERVOLTAGE?MAIN         0087H    0003H
   +--> ?PR?_ADC_GET?ADC
   +--> ?PR?_PLL_GETATT?PLL
   +--> ?PR?_RTX_SENDBYTES?RTX
 
-?PR?_RTX_SENDBYTES?RTX           0088H    0003H
+?PR?_RTX_SENDBYTES?RTX           008AH    0003H
   +--> ?PR?_RTX_SEND?RTX
 
 ?PR?GETPLLLOCKSTA?MAIN           -----    -----
@@ -164,25 +164,25 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   X:0000H         PUBLIC        nfrac_ratio
   D:00B8H         PUBLIC        IP
   X:0004H         PUBLIC        tx_vol
-  C:056BH         PUBLIC        PLL_Config
+  C:056DH         PUBLIC        PLL_Config
   D:00D8H         PUBLIC        CCON
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   B:0080H.5       PUBLIC        clk
   B:0080H.4       PUBLIC        dout
-  X:0068H         PUBLIC        nint_ratio
+  X:006AH         PUBLIC        nint_ratio
   B:0080H.3       PUBLIC        ldo
   B:0080H.7       PUBLIC        txen
-  C:07C6H         PUBLIC        _PLL_TxEn
+  C:07C8H         PUBLIC        _PLL_TxEn
   C:034FH         PUBLIC        PLL_Reset
   B:0080H.6       PUBLIC        le
-  C:0654H         PUBLIC        _PLL_GetATT
-  C:07EAH         PUBLIC        PLL_IsLocked
-  X:006AH         PUBLIC        reg_var
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 4
+  C:0656H         PUBLIC        _PLL_GetATT
+  C:07ECH         PUBLIC        PLL_IsLocked
+  X:006CH         PUBLIC        reg_var
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 4
 
 
-  X:0082H         PUBLIC        r_ratio
+  X:0084H         PUBLIC        r_ratio
   C:028BH         PUBLIC        _PLL_WriteReg
   D:00D0H         PUBLIC        PSW
   -------         PROC          PLL_RESET
@@ -200,11 +200,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   -------         ENDPROC       PLL_RESET
   -------         PROC          _PLL_WRITEREG
   D:0007H         SYMBOL        addr
-  X:0087H         SYMBOL        var
+  X:0089H         SYMBOL        var
   -------         DO            
-  X:008BH         SYMBOL        i
-  X:008CH         SYMBOL        content
-  X:0090H         SYMBOL        temp
+  X:008DH         SYMBOL        i
+  X:008EH         SYMBOL        content
+  X:0092H         SYMBOL        temp
   -------         ENDDO         
   C:028BH         LINE#         42
   C:028BH         LINE#         43
@@ -228,38 +228,38 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   -------         ENDPROC       _PLL_WRITEREG
   -------         PROC          PLL_CONFIG
   -------         DO            
-  X:0085H         SYMBOL        i
+  X:0087H         SYMBOL        i
   -------         ENDDO         
-  C:056BH         LINE#         69
-  C:056BH         LINE#         70
-  C:056BH         LINE#         72
-  C:0570H         LINE#         73
-  C:0570H         LINE#         74
-  C:059AH         LINE#         76
-  C:059CH         LINE#         77
-  C:05A3H         LINE#         78
-  C:05A5H         LINE#         79
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 5
+  C:056DH         LINE#         69
+  C:056DH         LINE#         70
+  C:056DH         LINE#         72
+  C:0572H         LINE#         73
+  C:0572H         LINE#         74
+  C:059CH         LINE#         76
+  C:059EH         LINE#         77
+  C:05A5H         LINE#         78
+  C:05A7H         LINE#         79
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 5
 
 
-  C:05ACH         LINE#         80
-  C:05AEH         LINE#         81
-  C:05BAH         LINE#         82
+  C:05AEH         LINE#         80
+  C:05B0H         LINE#         81
+  C:05BCH         LINE#         82
   -------         ENDPROC       PLL_CONFIG
   -------         PROC          PLL_ISLOCKED
-  C:07EAH         LINE#         84
-  C:07EAH         LINE#         85
-  C:07EAH         LINE#         86
-  C:07EFH         LINE#         87
+  C:07ECH         LINE#         84
+  C:07ECH         LINE#         85
+  C:07ECH         LINE#         86
+  C:07F1H         LINE#         87
   -------         ENDPROC       PLL_ISLOCKED
   -------         PROC          _PLL_TXEN
   D:0007H         SYMBOL        en
-  C:07C6H         LINE#         89
-  C:07C6H         LINE#         90
-  C:07C6H         LINE#         91
-  C:07CAH         LINE#         92
-  C:07CDH         LINE#         93
-  C:07CFH         LINE#         94
+  C:07C8H         LINE#         89
+  C:07C8H         LINE#         90
+  C:07C8H         LINE#         91
+  C:07CCH         LINE#         92
+  C:07CFH         LINE#         93
+  C:07D1H         LINE#         94
   -------         ENDPROC       _PLL_TXEN
   -------         PROC          _PLL_GETATT
   D:0006H         SYMBOL        pwr
@@ -267,23 +267,23 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   D:0005H         SYMBOL        temp
   D:0007H         SYMBOL        var
   -------         ENDDO         
-  C:0654H         LINE#         96
-  C:0654H         LINE#         97
-  C:0654H         LINE#         101
-  C:0656H         LINE#         102
-  C:0656H         LINE#         103
-  C:066CH         LINE#         104
-  C:066CH         LINE#         105
-  C:0671H         LINE#         107
-  C:0673H         LINE#         108
-  C:0677H         LINE#         110
-  C:067EH         LINE#         111
-  C:067EH         LINE#         112
-  C:0681H         LINE#         113
-  C:0684H         LINE#         114
-  C:0686H         LINE#         115
-  C:0688H         LINE#         117
-  C:068AH         LINE#         118
+  C:0656H         LINE#         96
+  C:0656H         LINE#         97
+  C:0656H         LINE#         101
+  C:0658H         LINE#         102
+  C:0658H         LINE#         103
+  C:066EH         LINE#         104
+  C:066EH         LINE#         105
+  C:0673H         LINE#         107
+  C:0675H         LINE#         108
+  C:0679H         LINE#         110
+  C:0680H         LINE#         111
+  C:0680H         LINE#         112
+  C:0683H         LINE#         113
+  C:0686H         LINE#         114
+  C:0688H         LINE#         115
+  C:068AH         LINE#         117
+  C:068CH         LINE#         118
   -------         ENDPROC       _PLL_GETATT
   -------         ENDMOD        PLL
 
@@ -297,86 +297,86 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   D:00C8H         PUBLIC        P5
   D:00E8H         PUBLIC        P6
   D:00F8H         PUBLIC        P7
-  C:0517H         PUBLIC        GetPowerVoltage
+  C:0519H         PUBLIC        GetPowerVoltage
   D:00A8H         PUBLIC        IE
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 6
 
 
   D:00B8H         PUBLIC        IP
   D:00D8H         PUBLIC        CCON
-  C:04B8H         PUBLIC        main
+  C:04BAH         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  X:0094H         PUBLIC        len
-  C:0719H         PUBLIC        GetPLLLockSta
-  X:0095H         PUBLIC        msg
+  X:0096H         PUBLIC        len
+  C:071BH         PUBLIC        GetPLLLockSta
+  X:0097H         PUBLIC        msg
   D:00D0H         PUBLIC        PSW
   -------         PROC          GETPOWERVOLTAGE
   -------         DO            
-  X:0085H         SYMBOL        var
-  X:0087H         SYMBOL        idx
+  X:0087H         SYMBOL        var
+  X:0089H         SYMBOL        idx
   -------         ENDDO         
-  C:0517H         LINE#         14
-  C:0517H         LINE#         15
-  C:0517H         LINE#         16
-  C:051EH         LINE#         17
-  C:0520H         LINE#         19
-  C:0520H         LINE#         20
-  C:053DH         LINE#         22
-  C:0554H         LINE#         24
-  C:055CH         LINE#         26
-  C:0562H         LINE#         28
+  C:0519H         LINE#         14
+  C:0519H         LINE#         15
+  C:0519H         LINE#         16
+  C:0520H         LINE#         17
+  C:0522H         LINE#         19
+  C:0522H         LINE#         20
+  C:053FH         LINE#         22
+  C:0556H         LINE#         24
+  C:055EH         LINE#         26
+  C:0564H         LINE#         28
   -------         ENDPROC       GETPOWERVOLTAGE
   -------         PROC          GETPLLLOCKSTA
-  C:0719H         LINE#         31
-  C:0719H         LINE#         32
-  C:0719H         LINE#         33
-  C:071FH         LINE#         34
-  C:0726H         LINE#         35
-  C:072CH         LINE#         36
-  C:0732H         LINE#         37
+  C:071BH         LINE#         31
+  C:071BH         LINE#         32
+  C:071BH         LINE#         33
+  C:0721H         LINE#         34
+  C:0728H         LINE#         35
+  C:072EH         LINE#         36
+  C:0734H         LINE#         37
   -------         ENDPROC       GETPLLLOCKSTA
   -------         PROC          MAIN
   -------         DO            
-  X:0084H         SYMBOL        cmd
+  X:0086H         SYMBOL        cmd
   -------         ENDDO         
-  C:04B8H         LINE#         40
-  C:04B8H         LINE#         41
-  C:04B8H         LINE#         45
-  C:04BBH         LINE#         48
-  C:04BEH         LINE#         51
-  C:04C1H         LINE#         52
-  C:04C4H         LINE#         53
-  C:04C7H         LINE#         54
-  C:04CAH         LINE#         56
-  C:04D1H         LINE#         59
-  C:04D4H         LINE#         60
-  C:04D7H         LINE#         62
-  C:04D7H         LINE#         63
-  C:04D7H         LINE#         64
-  C:04DDH         LINE#         65
-  C:04DDH         LINE#         66
-  C:04E6H         LINE#         67
-  C:04FAH         LINE#         68
-  C:04FAH         LINE#         69
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 7
+  C:04BAH         LINE#         40
+  C:04BAH         LINE#         41
+  C:04BAH         LINE#         45
+  C:04BDH         LINE#         48
+  C:04C0H         LINE#         51
+  C:04C3H         LINE#         52
+  C:04C6H         LINE#         53
+  C:04C9H         LINE#         54
+  C:04CCH         LINE#         56
+  C:04D3H         LINE#         59
+  C:04D6H         LINE#         60
+  C:04D9H         LINE#         62
+  C:04D9H         LINE#         63
+  C:04D9H         LINE#         64
+  C:04DFH         LINE#         65
+  C:04DFH         LINE#         66
+  C:04E8H         LINE#         67
+  C:04FCH         LINE#         68
+  C:04FCH         LINE#         69
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 7
 
 
-  C:04FAH         LINE#         70
-  C:04FDH         LINE#         71
-  C:04FFH         LINE#         72
-  C:04FFH         LINE#         73
-  C:04FFH         LINE#         74
-  C:0501H         LINE#         75
-  C:0501H         LINE#         76
-  C:0504H         LINE#         77
-  C:0507H         LINE#         78
-  C:0509H         LINE#         79
-  C:0509H         LINE#         80
-  C:050EH         LINE#         81
-  C:0510H         LINE#         82
-  C:0510H         LINE#         83
-  C:0515H         LINE#         84
+  C:04FCH         LINE#         70
+  C:04FFH         LINE#         71
+  C:0501H         LINE#         72
+  C:0501H         LINE#         73
+  C:0501H         LINE#         74
+  C:0503H         LINE#         75
+  C:0503H         LINE#         76
+  C:0506H         LINE#         77
+  C:0509H         LINE#         78
+  C:050BH         LINE#         79
+  C:050BH         LINE#         80
+  C:0510H         LINE#         81
+  C:0512H         LINE#         82
+  C:0512H         LINE#         83
+  C:0517H         LINE#         84
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
@@ -395,63 +395,63 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   D:00D8H         PUBLIC        CCON
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:07B0H         PUBLIC        RTX_IsRecvInt
-  X:009FH         PUBLIC        rtx_baud
+  C:07B2H         PUBLIC        RTX_IsRecvInt
+  X:00A1H         PUBLIC        rtx_baud
   D:0085H         PUBLIC        S4BUF
   D:0084H         PUBLIC        S4CON
-  C:07BBH         PUBLIC        _RTX_Send
-  C:07DAH         PUBLIC        _RTX_Recv
-  C:07D0H         PUBLIC        RTX_Init
-  C:06BFH         PUBLIC        _RTX_SendBytes
+  C:07BDH         PUBLIC        _RTX_Send
+  C:07DCH         PUBLIC        _RTX_Recv
+  C:07D2H         PUBLIC        RTX_Init
+  C:06C1H         PUBLIC        _RTX_SendBytes
   D:00D0H         PUBLIC        PSW
   -------         PROC          RTX_INIT
-  C:07D0H         LINE#         6
-  C:07D0H         LINE#         7
-  C:07D0H         LINE#         9
-  C:07D3H         LINE#         12
-  C:07D6H         LINE#         15
-  C:07D9H         LINE#         16
+  C:07D2H         LINE#         6
+  C:07D2H         LINE#         7
+  C:07D2H         LINE#         9
+  C:07D5H         LINE#         12
+  C:07D8H         LINE#         15
+  C:07DBH         LINE#         16
   -------         ENDPROC       RTX_INIT
   -------         PROC          RTX_ISRECVINT
-  C:07B0H         LINE#         18
-  C:07B0H         LINE#         19
-  C:07B0H         LINE#         20
-  C:07B5H         LINE#         21
-  C:07B8H         LINE#         22
-  C:07BAH         LINE#         23
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 8
+  C:07B2H         LINE#         18
+  C:07B2H         LINE#         19
+  C:07B2H         LINE#         20
+  C:07B7H         LINE#         21
+  C:07BAH         LINE#         22
+  C:07BCH         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 8
 
 
   -------         ENDPROC       RTX_ISRECVINT
   -------         PROC          _RTX_RECV
   D:0001H         SYMBOL        buf
-  C:07DAH         LINE#         25
-  C:07DAH         LINE#         26
-  C:07DAH         LINE#         27
-  C:07DFH         LINE#         28
-  C:07E2H         LINE#         29
+  C:07DCH         LINE#         25
+  C:07DCH         LINE#         26
+  C:07DCH         LINE#         27
+  C:07E1H         LINE#         28
+  C:07E4H         LINE#         29
   -------         ENDPROC       _RTX_RECV
   -------         PROC          _RTX_SEND
   D:0007H         SYMBOL        buf
-  C:07BBH         LINE#         31
-  C:07BBH         LINE#         32
-  C:07BBH         LINE#         33
-  C:07BDH         LINE#         34
-  C:07C2H         LINE#         35
-  C:07C5H         LINE#         36
+  C:07BDH         LINE#         31
+  C:07BDH         LINE#         32
+  C:07BDH         LINE#         33
+  C:07BFH         LINE#         34
+  C:07C4H         LINE#         35
+  C:07C7H         LINE#         36
   -------         ENDPROC       _RTX_SEND
   -------         PROC          _RTX_SENDBYTES
-  X:0088H         SYMBOL        buf
+  X:008AH         SYMBOL        buf
   D:0005H         SYMBOL        len
   -------         DO            
   D:0006H         SYMBOL        idx
   -------         ENDDO         
-  C:06BFH         LINE#         38
-  C:06CAH         LINE#         39
-  C:06CAH         LINE#         40
-  C:06CCH         LINE#         41
-  C:06D1H         LINE#         42
-  C:06EBH         LINE#         43
+  C:06C1H         LINE#         38
+  C:06CCH         LINE#         39
+  C:06CCH         LINE#         40
+  C:06CEH         LINE#         41
+  C:06D3H         LINE#         42
+  C:06EDH         LINE#         43
   -------         ENDPROC       _RTX_SENDBYTES
   -------         ENDMOD        RTX
 
@@ -472,137 +472,137 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   D:00F8H         PUBLIC        P7
   D:00BAH         PUBLIC        P_SW2
   D:00A8H         PUBLIC        IE
-  C:077BH         PUBLIC        HW_SysclkInit
+  C:077DH         PUBLIC        HW_SysclkInit
   D:008FH         PUBLIC        INTCLKO
   D:00B8H         PUBLIC        IP
-  X:009AH         PUBLIC        sysclk
-  C:060AH         PUBLIC        HW_T2Init
+  X:009CH         PUBLIC        sysclk
+  C:060CH         PUBLIC        HW_T2Init
   D:00D8H         PUBLIC        CCON
-  C:07E3H         PUBLIC        HW_IntcInit
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 9
+  C:07E5H         PUBLIC        HW_IntcInit
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 9
 
 
-  C:068BH         PUBLIC        HW_IOInit
+  C:068DH         PUBLIC        HW_IOInit
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  X:009EH         PUBLIC        temp
+  X:00A0H         PUBLIC        temp
   D:00AFH         PUBLIC        IE2
   D:008EH         PUBLIC        AUXR
-  C:05BBH         PUBLIC        HW_Uart4ISR
+  C:05BDH         PUBLIC        HW_Uart4ISR
   D:00D6H         PUBLIC        T2H
   D:00D7H         PUBLIC        T2L
   D:00D0H         PUBLIC        PSW
   D:0094H         PUBLIC        P0M0
   -------         PROC          HW_IOINIT
-  C:068BH         LINE#         11
-  C:068BH         LINE#         12
-  C:068BH         LINE#         14
-  C:068EH         LINE#         15
-  C:0691H         LINE#         17
-  C:0694H         LINE#         18
-  C:0697H         LINE#         20
-  C:069AH         LINE#         21
-  C:069DH         LINE#         24
-  C:06A0H         LINE#         25
-  C:06A3H         LINE#         28
-  C:06A6H         LINE#         29
-  C:06A9H         LINE#         32
-  C:06ACH         LINE#         33
-  C:06AFH         LINE#         34
-  C:06B2H         LINE#         35
-  C:06B5H         LINE#         36
-  C:06B8H         LINE#         39
-  C:06BBH         LINE#         40
-  C:06BEH         LINE#         41
+  C:068DH         LINE#         11
+  C:068DH         LINE#         12
+  C:068DH         LINE#         14
+  C:0690H         LINE#         15
+  C:0693H         LINE#         17
+  C:0696H         LINE#         18
+  C:0699H         LINE#         20
+  C:069CH         LINE#         21
+  C:069FH         LINE#         24
+  C:06A2H         LINE#         25
+  C:06A5H         LINE#         28
+  C:06A8H         LINE#         29
+  C:06ABH         LINE#         32
+  C:06AEH         LINE#         33
+  C:06B1H         LINE#         34
+  C:06B4H         LINE#         35
+  C:06B7H         LINE#         36
+  C:06BAH         LINE#         39
+  C:06BDH         LINE#         40
+  C:06C0H         LINE#         41
   -------         ENDPROC       HW_IOINIT
   -------         PROC          HW_SYSCLKINIT
-  C:077BH         LINE#         43
-  C:077BH         LINE#         44
-  C:077BH         LINE#         46
-  C:077EH         LINE#         49
-  C:0784H         LINE#         52
-  C:078BH         LINE#         53
-  C:078BH         LINE#         55
-  C:078BH         LINE#         57
-  C:078EH         LINE#         58
+  C:077DH         LINE#         43
+  C:077DH         LINE#         44
+  C:077DH         LINE#         46
+  C:0780H         LINE#         49
+  C:0786H         LINE#         52
+  C:078DH         LINE#         53
+  C:078DH         LINE#         55
+  C:078DH         LINE#         57
+  C:0790H         LINE#         58
   -------         ENDPROC       HW_SYSCLKINIT
   -------         PROC          HW_T2INIT
   -------         DO            
   D:0006H         SYMBOL        div
   -------         ENDDO         
-  C:060AH         LINE#         60
-  C:060AH         LINE#         61
-  C:060AH         LINE#         62
-  C:0641H         LINE#         65
-  C:0644H         LINE#         66
-  C:0647H         LINE#         69
-  C:064AH         LINE#         72
-  C:064DH         LINE#         75
-  C:0650H         LINE#         78
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 10
+  C:060CH         LINE#         60
+  C:060CH         LINE#         61
+  C:060CH         LINE#         62
+  C:0643H         LINE#         65
+  C:0646H         LINE#         66
+  C:0649H         LINE#         69
+  C:064CH         LINE#         72
+  C:064FH         LINE#         75
+  C:0652H         LINE#         78
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 10
 
 
-  C:0653H         LINE#         79
+  C:0655H         LINE#         79
   -------         ENDPROC       HW_T2INIT
   -------         PROC          HW_INTCINIT
-  C:07E3H         LINE#         81
-  C:07E3H         LINE#         82
-  C:07E3H         LINE#         84
-  C:07E6H         LINE#         87
-  C:07E9H         LINE#         88
+  C:07E5H         LINE#         81
+  C:07E5H         LINE#         82
+  C:07E5H         LINE#         84
+  C:07E8H         LINE#         87
+  C:07EBH         LINE#         88
   -------         ENDPROC       HW_INTCINIT
   -------         PROC          HW_UART4ISR
-  C:05BBH         LINE#         90
-  C:05D8H         LINE#         92
-  C:05DEH         LINE#         93
-  C:05DEH         LINE#         94
-  C:05E7H         LINE#         95
-  C:05EFH         LINE#         96
-  C:05EFH         LINE#         97
+  C:05BDH         LINE#         90
+  C:05DAH         LINE#         92
+  C:05E0H         LINE#         93
+  C:05E0H         LINE#         94
+  C:05E9H         LINE#         95
+  C:05F1H         LINE#         96
+  C:05F1H         LINE#         97
   -------         ENDPROC       HW_UART4ISR
   -------         ENDMOD        HW
 
   -------         MODULE        CMD
   C:0000H         SYMBOL        _ICE_DUMMY_
-  X:00A3H         PUBLIC        cmd
-  C:078FH         PUBLIC        _Cmd_get
-  C:06ECH         PUBLIC        _Cmd_set
-  X:00A5H         PUBLIC        bValid
-  C:07F0H         PUBLIC        Cmd_IsNew
+  X:00A5H         PUBLIC        cmd
+  C:0791H         PUBLIC        _Cmd_get
+  C:06EEH         PUBLIC        _Cmd_set
+  X:00A7H         PUBLIC        bValid
+  C:07F2H         PUBLIC        Cmd_IsNew
   -------         PROC          _CMD_SET
   D:0007H         SYMBOL        content
-  C:06ECH         LINE#         6
-  C:06ECH         LINE#         7
-  C:06ECH         LINE#         8
-  C:06F4H         LINE#         9
-  C:06F7H         LINE#         10
-  C:06FFH         LINE#         11
-  C:06FFH         LINE#         12
-  C:0705H         LINE#         14
-  C:0705H         LINE#         16
-  C:070EH         LINE#         17
-  C:070EH         LINE#         18
-  C:0712H         LINE#         20
-  C:0712H         LINE#         22
-  C:0718H         LINE#         23
+  C:06EEH         LINE#         6
+  C:06EEH         LINE#         7
+  C:06EEH         LINE#         8
+  C:06F6H         LINE#         9
+  C:06F9H         LINE#         10
+  C:0701H         LINE#         11
+  C:0701H         LINE#         12
+  C:0707H         LINE#         14
+  C:0707H         LINE#         16
+  C:0710H         LINE#         17
+  C:0710H         LINE#         18
+  C:0714H         LINE#         20
+  C:0714H         LINE#         22
+  C:071AH         LINE#         23
   -------         ENDPROC       _CMD_SET
   -------         PROC          CMD_ISNEW
-  C:07F0H         LINE#         25
-  C:07F0H         LINE#         26
-  C:07F0H         LINE#         27
-  C:07F5H         LINE#         28
+  C:07F2H         LINE#         25
+  C:07F2H         LINE#         26
+  C:07F2H         LINE#         27
+  C:07F7H         LINE#         28
   -------         ENDPROC       CMD_ISNEW
   -------         PROC          _CMD_GET
   D:0001H         SYMBOL        pCmd
-  C:078FH         LINE#         30
-  C:078FH         LINE#         31
-  C:078FH         LINE#         32
-  C:0795H         LINE#         35
-  C:079CH         LINE#         36
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 11
+  C:0791H         LINE#         30
+  C:0791H         LINE#         31
+  C:0791H         LINE#         32
+  C:0797H         LINE#         35
+  C:079EH         LINE#         36
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 11
 
 
-  C:07A1H         LINE#         38
+  C:07A3H         LINE#         38
   -------         ENDPROC       _CMD_GET
   -------         ENDMOD        CMD
 
@@ -624,42 +624,42 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   D:00BCH         PUBLIC        ADC_CONTR
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:07A2H         PUBLIC        ADC_Init
-  C:073BH         PUBLIC        _ADC_Get
+  C:07A4H         PUBLIC        ADC_Init
+  C:073DH         PUBLIC        _ADC_Get
   D:00BEH         PUBLIC        ADC_RESL
   D:00D0H         PUBLIC        PSW
   -------         PROC          ADC_INIT
-  C:07A2H         LINE#         4
-  C:07A2H         LINE#         5
-  C:07A2H         LINE#         7
-  C:07A5H         LINE#         10
-  C:07A8H         LINE#         13
-  C:07ABH         LINE#         15
+  C:07A4H         LINE#         4
+  C:07A4H         LINE#         5
+  C:07A4H         LINE#         7
+  C:07A7H         LINE#         10
+  C:07AAH         LINE#         13
+  C:07ADH         LINE#         15
   -------         ENDPROC       ADC_INIT
   -------         PROC          _ADC_GET
   D:0007H         SYMBOL        ch
   -------         DO            
   D:0006H         SYMBOL        var
   -------         ENDDO         
-  C:073BH         LINE#         18
-  C:073BH         LINE#         19
-  C:073BH         LINE#         22
-  C:073EH         LINE#         25
-  C:0741H         LINE#         26
-  C:0744H         LINE#         29
-  C:0747H         LINE#         32
-  C:074CH         LINE#         35
-  C:074EH         LINE#         36
-  C:0752H         LINE#         37
-  C:075AH         LINE#         39
-  C:075AH         LINE#         40
+  C:073DH         LINE#         18
+  C:073DH         LINE#         19
+  C:073DH         LINE#         22
+  C:0740H         LINE#         25
+  C:0743H         LINE#         26
+  C:0746H         LINE#         29
+  C:0749H         LINE#         32
+  C:074EH         LINE#         35
+  C:0750H         LINE#         36
+  C:0754H         LINE#         37
+  C:075CH         LINE#         39
+  C:075CH         LINE#         40
   -------         ENDPROC       _ADC_GET
   -------         ENDMOD        ADC
 
   -------         MODULE        UTILY
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:075BH         PUBLIC        _delay_ms
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:14:09  PAGE 12
+  C:075DH         PUBLIC        _delay_ms
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/14/2020  22:45:25  PAGE 12
 
 
   -------         PROC          _DELAY_MS
@@ -668,13 +668,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   D:0004H         SYMBOL        j
   D:0002H         SYMBOL        i
   -------         ENDDO         
-  C:075BH         LINE#         9
-  C:075BH         LINE#         10
-  C:075BH         LINE#         12
-  C:0765H         LINE#         13
-  C:0765H         LINE#         14
-  C:0773H         LINE#         15
-  C:077AH         LINE#         16
+  C:075DH         LINE#         9
+  C:075DH         LINE#         10
+  C:075DH         LINE#         12
+  C:0767H         LINE#         13
+  C:0767H         LINE#         14
+  C:0775H         LINE#         15
+  C:077CH         LINE#         16
   -------         ENDPROC       _DELAY_MS
   -------         ENDMOD        UTILY
 
@@ -714,5 +714,5 @@ SYMBOL TABLE OF MODULE:  .\Objects\PSV4R3A-4C (PLL)
   C:027FH         PUBLIC        ?C?LSTXDATA
   -------         ENDMOD        ?C?LSTXDATA
 
-Program Size: data=9.0 xdata=166 code=2034
+Program Size: data=9.0 xdata=168 code=2036
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
