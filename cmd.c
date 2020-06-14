@@ -36,8 +36,3 @@ void Cmd_get(unsigned char* pCmd)
 	bValid = 0;
 	return;
 }
-
-void Cmd_clear()
-{
-	bValid = 0;
-}

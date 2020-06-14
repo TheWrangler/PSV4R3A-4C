@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   RTX                                                                   06/14/2020 19:21:03 PAGE 1   
+C51 COMPILER V9.00   RTX                                                                   06/14/2020 22:14:08 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE RTX
 OBJECT MODULE PLACED IN .\Objects\rtx.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE rtx.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\rtx.lst) OBJECT(.\Objects\
-                    -rtx.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE rtx.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\rtx.lst) OBJECT(.\Ob
+                    -jects\rtx.obj)
 
 line level    source
 
@@ -54,16 +54,16 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     76    ----
+   CODE SIZE        =     86    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   XDATA SIZE       =      4       3
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      4       3
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
-C51 COMPILER V9.00   RTX                                                                   06/14/2020 19:21:03 PAGE 2   
+C51 COMPILER V9.00   RTX                                                                   06/14/2020 22:14:08 PAGE 2   
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

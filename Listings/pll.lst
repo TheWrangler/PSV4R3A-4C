@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   PLL                                                                   06/14/2020 19:21:02 PAGE 1   
+C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:14:08 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE PLL
 OBJECT MODULE PLACED IN .\Objects\pll.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE pll.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\pll.lst) OBJECT(.\Objects\
-                    -pll.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE pll.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\pll.lst) OBJECT(.\Ob
+                    -jects\pll.obj)
 
 line level    source
 
@@ -17,95 +17,127 @@ line level    source
    7          unsigned long nfrac_ratio = 0;
    8          unsigned long reg_var[6] = {0x1f867f,0xf6800a,0xfc0001,0x1ae,0x0};
    9          
-  10          sbit ldo = P0^3;
-  11          sbit dout = P0^4;
-  12          sbit clk = P0^5;
-  13          sbit le = P0^6;
-  14          
-  15          sbit txen = P0^7;
-  16          
-  17          void PLL_Reset()
-  18          {
-  19   1              clk = 0;
-  20   1              dout = 0;
-  21   1              le = 1;
-  22   1      
-  23   1              //reference div ratio
-  24   1              reg_var[1] &= 0xffc000;
-  25   1              reg_var[1] |= r_ratio;
-  26   1      
-  27   1              //n.int div ratio
-  28   1              reg_var[3] &= 0xff0000;
-  29   1              reg_var[3] |= nint_ratio;
-  30   1      
-  31   1              //n.frac div ratio
-  32   1              reg_var[4] &= 0xf00000;
-  33   1              reg_var[4] |= nfrac_ratio;
-  34   1      }
-  35          
-  36          void PLL_WriteReg(unsigned char addr,unsigned long var)
-  37          {
-  38   1              unsigned char i;
-  39   1              unsigned long content = addr,temp;
-  40   1              content = content << 24;
-  41   1              content |= var;
-  42   1              
-  43   1              le = 0;
-  44   1              
-  45   1              for(i=0;i<27;i++)
-  46   1              {
-  47   2                      temp = (0x04000000 >> i);
-  48   2                      
-  49   2                      clk = 0;
-  50   2                      
-  51   2                      if((content & temp) == temp)
-  52   2                              dout = 1;
-  53   2                      else dout = 0;
+  10          unsigned int tx_vol[50] = {0x0060,0x0066,0x006d,0x0072,0x007a,0x0083,0x0096,0x009e,0x00ae,0x00ba,
+  11                                                                  0x00c3,0x00ce,0x00d4,0x00ed,0x00f8,0x00ff,0x0105,0x0122,0x00142,0x016b,
+  12                                                                  0x019f,0x01d5,0x01e8,0x0225,0x024d,0x028a,0x02c6,0x030a,0x0352,0x0394,
+  13                                                                  0x03dc,0x0435,0x0495,0x04eb,0x0545,0x05b0,0x061e,0x0674,0x06e8,0x0763,
+  14                                                                  0x07d0,0x0865,0x08f0,0x0974,0x09f9,0x0a7f,0x0af7,0x0b70,0x0bbb,0x0c50};
+  15          
+  16          sbit ldo = P0^3;
+  17          sbit dout = P0^4;
+  18          sbit clk = P0^5;
+  19          sbit le = P0^6;
+  20          
+  21          sbit txen = P0^7;
+  22          
+  23          void PLL_Reset()
+  24          {
+  25   1              clk = 0;
+  26   1              dout = 0;
+  27   1              le = 1;
+  28   1      
+  29   1              //reference div ratio
+  30   1              reg_var[1] &= 0xffc000;
+  31   1              reg_var[1] |= r_ratio;
+  32   1      
+  33   1              //n.int div ratio
+  34   1              reg_var[3] &= 0xff0000;
+  35   1              reg_var[3] |= nint_ratio;
+  36   1      
+  37   1              //n.frac div ratio
+  38   1              reg_var[4] &= 0xf00000;
+  39   1              reg_var[4] |= nfrac_ratio;
+  40   1      }
+  41          
+  42          void PLL_WriteReg(unsigned char addr,unsigned long var)
+  43          {
+  44   1              unsigned char i;
+  45   1              unsigned long content = addr,temp;
+  46   1              content = content << 24;
+  47   1              content |= var;
+  48   1              
+  49   1              le = 0;
+  50   1              
+  51   1              for(i=0;i<27;i++)
+  52   1              {
+  53   2                      temp = (0x04000000 >> i);
   54   2                      
-C51 COMPILER V9.00   PLL                                                                   06/14/2020 19:21:02 PAGE 2   
+C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:14:08 PAGE 2   
 
-  55   2                      clk = 1;
-  56   2              }       
-  57   1              
-  58   1              clk = 0;
-  59   1              dout = 0;
-  60   1              le = 1;
-  61   1      }
-  62          
-  63          void PLL_Config()
-  64          {
-  65   1              unsigned char i;
-  66   1              for(i=0;i<5;i++)
-  67   1              {
-  68   2                      PLL_WriteReg(i, reg_var[i]);
-  69   2      
-  70   2                      le = 1;
-  71   2                      delay_ms(1);
-  72   2                      le = 0;
-  73   2                      delay_ms(1);
-  74   2                      le = 1;
-  75   2              }
-  76   1      }
-  77          
-  78          signed char PLL_IsLocked()
-  79          {
-  80   1              return ldo;
-  81   1      }
-  82          
-  83          void PLL_TxEn(unsigned char en)
-  84          {
-  85   1              if(en == 1)
-  86   1                      txen = 1;
-  87   1              else txen = 0;  
-  88   1      }
+  55   2                      clk = 0;
+  56   2                      
+  57   2                      if((content & temp) == temp)
+  58   2                              dout = 1;
+  59   2                      else dout = 0;
+  60   2                      
+  61   2                      clk = 1;
+  62   2              }       
+  63   1              
+  64   1              clk = 0;
+  65   1              dout = 0;
+  66   1              le = 1;
+  67   1      }
+  68          
+  69          void PLL_Config()
+  70          {
+  71   1              unsigned char i;
+  72   1              for(i=0;i<5;i++)
+  73   1              {
+  74   2                      PLL_WriteReg(i, reg_var[i]);
+  75   2      
+  76   2                      le = 1;
+  77   2                      delay_ms(1);
+  78   2                      le = 0;
+  79   2                      delay_ms(1);
+  80   2                      le = 1;
+  81   2              }
+  82   1      }
+  83          
+  84          signed char PLL_IsLocked()
+  85          {
+  86   1              return ldo;
+  87   1      }
+  88          
+  89          void PLL_TxEn(unsigned char en)
+  90          {
+  91   1              if(en == 1)
+  92   1                      txen = 1;
+  93   1              else txen = 0;  
+  94   1      }
+  95          
+  96          unsigned char PLL_GetATT(unsigned int pwr)
+  97          {
+  98   1              unsigned char temp;
+  99   1              signed char var;
+ 100   1      
+ 101   1              for(temp=0;temp<50;temp++)
+ 102   1              {
+ 103   2                      if(tx_vol[temp] > pwr)
+ 104   2                              break;
+ 105   2              }
+ 106   1      
+ 107   1              var = temp;
+ 108   1              var -= 46;
+ 109   1      
+ 110   1              if(var < 0)
+ 111   1              {
+ 112   2                      temp = -var;
+ 113   2                      temp |= 0x80;
+ 114   2              }
+ 115   1              else temp = var;
+ 116   1      
+C51 COMPILER V9.00   PLL                                                                   06/14/2020 22:14:08 PAGE 3   
+
+ 117   1              return temp;     
+ 118   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    322    ----
+   CODE SIZE        =    536    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   XDATA SIZE       =    132      15
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     32      15
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

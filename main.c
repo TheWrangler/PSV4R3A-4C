@@ -13,11 +13,18 @@ unsigned char len;
 
 void GetPowerVoltage()
 {
-	unsigned int var;
-	var = ADC_Get(ADC_CH_P1_1);
-	msg[0] = var >> 8;
-	msg[1] = var;
-	len = 2;
+	unsigned int var=0;
+	unsigned char idx = 0;
+
+	for(;idx<10;idx++)
+		var += ADC_Get(ADC_CH_P1_1);
+
+	var /= 10;
+
+	msg[0] = PLL_GetATT(var);
+
+	len = 1;
+
 	RTX_SendBytes(msg,len);	
 }
 
