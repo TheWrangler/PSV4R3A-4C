@@ -7,7 +7,7 @@
 #include "utily.h"
 #include "pwm.h"
 
-//WARNNING:STC MCU int protype is 16 bit width,not 32 bit width£¡£¡£¡£¡£¡£¡
+//WARNNING:STC MCU int protype is 16 bit width,not 32 bit width
 extern unsigned char cmd[5];
 
 

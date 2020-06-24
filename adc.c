@@ -26,7 +26,7 @@ unsigned int ADC_Get(ADC_CH ch)
 	ADC_CONTR |= 0x40;
 	
 	//wait for convert finished
-	while(ADC_CONTR & 0x40 == 0x40);
+	while((ADC_CONTR & 0x20) != 0x20);
 	
 	//read result
 	var = ADC_RES;

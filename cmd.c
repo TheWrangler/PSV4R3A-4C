@@ -10,7 +10,7 @@
 unsigned char tx_pwr = 0;
 unsigned char tx_enable = 0;
 
-sbit tx_en = P1^0;
+sbit tx_en = P0^7;
 
 unsigned char rply[9];
 unsigned char rply_len = 0;
@@ -33,6 +33,8 @@ void Cmd_InitTable()
 
 
     tx_pwr_table[0] = 0;
+
+	tx_en = 1;
 }
 
 void Cmd_set(unsigned char content)
@@ -362,15 +364,17 @@ void process_a2(unsigned char cmd_wd)
 	if(cmd_wd == 0x01)
 	{
 		 tx_enable = cmd[3];
-		 tx_en = tx_enable;
-		 Cmd_ack(5);
+		 if(tx_enable == 0)
+		 	tx_en = 0;
+		 else if(tx_enable == 1)
+		 	tx_en = 1;
 	}
 	else if(cmd_wd == 0x02)
 	{
 		tx_pwr = cmd[3];
-		WriteI2C(tx_ctrl_table[cmd[3]]);	
-		Cmd_ack(5);
+		WriteI2C(tx_ctrl_table[cmd[3]]);		
 	}
+	Cmd_ack(5);
 	Cmd_Del(5);
 }
 

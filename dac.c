@@ -1,4 +1,5 @@
 #include "stc8.h"
+#include "dac.h"
 
 sbit scl = P3^5;
 sbit sda = P3^6;
@@ -12,37 +13,67 @@ void InitI2C()
 	a0 = 0;
 	a1 = 0;
 
-	I2CCFG |= 40;
-
-	I2CCFG &= ~0x03f;
-	I2CCFG |= 63;
-
-	I2CSLADR = 0x28;
-
-	I2CMSCR &= ~0x80;
-
-	I2CCFG |= 0x80;
+	scl = 1;
+	sda = 1;
 }
 
 
 void WriteI2C(unsigned char var)
 {
-	//data+ack
-	I2CTXD = 0x00;
-	I2CMSCR &= ~0x0f;
-	I2CMSCR |= 0x0a;
+	//start bit
+	sda = 0;
+	scl = 0;
+	
+	//i2c write address
+	SendWriteAddress();	
 
-	while((I2CMSST & 0x80) == 0x80);
+	//wait ack
+	scl = 0;
+	while(sda != 0);
+	scl = 1;
 
-	//data+ack
-	I2CTXD = var;
-	I2CMSCR &= ~0x0f;
-	I2CMSCR |= 0x0a;
+	//i2c reg address
+	SendByte(0x00);
 
-	while((I2CMSST & 0x80) == 0x80);
+	//wait ack
+	scl = 0;
+	while(sda != 0)
+	scl = 1;
 
-	//stop
-   	I2CMSCR &= ~0x0f;
-	I2CMSCR |= 0x06;
+	//i2c reg value
+	SendByte(var);
+
+	//wait ack
+	scl = 0;
+	while(sda != 0);
+	scl = 1;
+
+	//stop bit
+	scl = 1;
+	sda = 1;
+}
+
+void SendWriteAddress()
+{
+	unsigned char addr = 0x50,i;
+	for(i=0;i<8;i++)
+	{
+		scl = 0;
+		sda = ((addr & 0x80) >> 7);
+		scl = 1;
+		addr = (addr << 1);
+	}
+}
+
+void SendByte(unsigned char val)
+{
+	unsigned char value = val,i;
+	for(i=0;i<8;i++)
+	{
+		scl = 0;
+		sda = ((value & 0x80) >> 7);
+		scl = 1;
+		value = (value << 1);
+	}	
 }
 

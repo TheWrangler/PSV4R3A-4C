@@ -16,18 +16,22 @@ unsigned char rx_r_ratio = 4/*10*/;
 unsigned long rx_nfrac_ratio = 15435038;
 unsigned long rx_reg_var[6] = {0x1f86ff,0xf6800a,0xe00000,0x1ae,0x0};
 
-sbit tx_lock = P0^6;
-sbit rx_lock = P2^6;
+sbit tx_lock = P0^2;
+sbit tx_dout = P4^3;
+sbit tx_le = P0^6;
+sbit tx_clk = P0^5;
 
-sbit dout = P2^7;
-sbit clk = P0^5;
-sbit tx_le = P0^3;
+sbit rx_lock = P2^6;
+sbit rx_dout = P2^7;
+sbit rx_clk = P0^0;
 sbit rx_le = P0^1;
 
 void PLL_Reset()
 {
-	clk = 0;
-	dout = 0;
+	rx_clk = 0;
+	tx_clk = 0;
+	rx_dout = 0;
+	tx_dout = 0;
 	rx_le = 1;
 	tx_le = 1;
 }
@@ -104,17 +108,17 @@ void PLL_WriteTxReg(unsigned char addr,unsigned long var)
 	{
 		temp = (0x04000000 >> i);
 		
-		clk = 0;
+		tx_clk = 0;
 		
 		if((content & temp) == temp)
-			dout = 1;
-		else dout = 0;
+			tx_dout = 1;
+		else tx_dout = 0;
 		
-		clk = 1;
+		tx_clk = 1;
 	}	
 	
-	clk = 0;
-	dout = 0;
+	tx_clk = 0;
+	tx_dout = 0;
 	tx_le = 1;
 }
 
@@ -131,17 +135,17 @@ void PLL_WriteRxReg(unsigned char addr,unsigned long var)
 	{
 		temp = (0x04000000 >> i);
 		
-		clk = 0;
+		rx_clk = 0;
 		
 		if((content & temp) == temp)
-			dout = 1;
-		else dout = 0;
+			rx_dout = 1;
+		else rx_dout = 0;
 		
-		clk = 1;
+		rx_clk = 1;
 	}	
 	
-	clk = 0;
-	dout = 0;
+	rx_clk = 0;
+	rx_dout = 0;
 	rx_le = 1;
 }
 
